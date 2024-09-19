@@ -1,5 +1,7 @@
-# Welcome to Icekrak's Portfolio!
+# Welcome to Blackstar Initiative's Version 2 Website
 
-This is a Mono repo for my version 2 of my portfolio.
+This is a Mono repo for for the Black Star Initiative V2 Website
 
-[Link to the Portfolio](https://www.felix-hu.me/)
+
+
+[Personal Portfolio](https://www.felix-hu.me/)
