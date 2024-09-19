@@ -1,0 +1,214 @@
+@font-face {
+  font-family: "SFPro";
+  src: url("/fonts/SFpromedium.woff2") format("woff2"),
+    url("/fonts/SFpromedium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFPro";
+  src: url("/fonts/SFprobold.woff2") format("woff2"),
+    url("/fonts/SFprobold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFPro";
+  src: url("/fonts/SFproitalic.woff2") format("woff2"),
+    url("/fonts/SFproitalic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "NewYork";
+  src: url("/fonts/NewYork.woff2") format("woff2"),
+    url("/fonts/NewYork.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NewYork";
+  src: url("/fonts/NewYorkMedium-Bold.woff2") format("woff2"),
+    url("/fonts/NewYorkMedium-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NewYork";
+  src: url("/fonts/NewYorkItalic.woff2") format("woff2"),
+    url("/fonts/NewYorkItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: #002b36;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: #fdf6e3;
+    --secondary-foreground: #586e75;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    height: 100dvh;
+  }
+}
+
+.sidewaysText {
+  writing-mode: vertical-rl;
+  text-orientation: sideways-right;
+  transform: rotate(180deg);
+}
+
+.loadingBarContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background: rgba(0, 43, 54, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  opacity: 1;
+  transition: visibility 1s, opacity 1s ease-out;
+}
+
+.loadingContainer {
+  width: 80%;
+  max-width: 400px;
+  border: 2px solid #002b36;
+  background-color: #eee8d5;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(238, 232, 213, 0.1);
+  padding: 3px;
+}
+
+.loadingBar {
+  height: 20px;
+  position: relative;
+  background: #002b36;
+  width: 0;
+  animation: load 5s ease-in-out forwards;
+  animation-delay: 2s;
+}
+
+.fadeOut {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loadingTooltip {
+  width: 80%;
+  max-width: 400px;
+  white-space: preWrap;
+}
+
+.disclaimerLoading {
+  margin-top: 20px;
+  text-align: center;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 2rem;
+}
+
+@keyframes load {
+  0% {
+    width: 0;
+  }
+  85% {
+    width: 90%;
+  }
+  90% {
+    width: 90%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+body {
+  font-family: "SFPro", ui-sans-serif, system-ui;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "NewYork", ui-serif, serif;
+}
