@@ -8,7 +8,7 @@ export default defineConfig({
   name: 'default',
   title: 'admin',
 
-  projectId: 'qoxr4rik',
+  projectId: 'f3je6yf6',
   dataset: 'production',
 
   plugins: [structureTool({structure}), visionTool()],

@@ -11,11 +11,6 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'pretitle',
-      title: 'Pretitle',
-      type: 'string',
-    }),
-    defineField({
       name: 'subtitle',
       title: 'Subtitle',
       type: 'string',
@@ -24,11 +19,6 @@ export default defineType({
       name: 'description',
       title: 'Description',
       type: 'text',
-    }),
-    defineField({
-      name: 'file',
-      title: 'File',
-      type: 'file',
     }),
     defineField({
       name: 'image',
