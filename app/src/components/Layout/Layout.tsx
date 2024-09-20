@@ -10,12 +10,9 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const mainRef = useRef<HTMLElement>(null);
 
   return (
-    <div className="flex flex-col lg:flex-row">
+    <div className="flex flex-col">
       <Header />
-      <main
-        className="w-full lg:w-[calc(100%-5rem)] bg-[#fdf6e3] h-full min-h-[100dvh]"
-        ref={mainRef}
-      >
+      <main className="w-full h-full" ref={mainRef}>
         {children}
         <ReturnTop />
       </main>

@@ -16,7 +16,7 @@ export const Header: React.FC = () => {
   }, [isMd]);
 
   return (
-    <header className="bg-[#002b36] w-full lg:w-[5rem] p-4  lg:p-0 sticky lg:static top-0 left-0 z-10">
+    <header className="bg-[#002b36] w-full h-[5rem] p-4 sticky top-0 left-0 z-10">
       <HeaderDesktop />
       <HeaderMobile isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
     </header>

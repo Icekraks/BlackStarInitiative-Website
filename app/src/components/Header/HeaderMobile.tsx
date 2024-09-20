@@ -30,11 +30,11 @@ export const HeaderMobile: React.FC<HeaderMobileProps> = ({
         >
           <Menu />
         </Button>
-        {root.navigation.headerTitle ? (
+        {/* {root.navigation.headerTitle ? (
           <RemixLink to={"/"}>
             <h4 className="font-sans">{root.navigation.headerTitle}</h4>
           </RemixLink>
-        ) : null}
+        ) : null} */}
       </div>
       <div
         onClick={() => setIsOpen(false)}
@@ -51,13 +51,13 @@ export const HeaderMobile: React.FC<HeaderMobileProps> = ({
       >
         <div className="relative h-full flex flex-col">
           <div className="header flex">
-            <h1>{root.navigation.headerTitle}</h1>
+            {/* <h1>{root.navigation.headerTitle}</h1> */}
             <Button className="ml-[auto]" onClick={() => setIsOpen(false)}>
               <X />
             </Button>
           </div>
           <div className="flex flex-col gap-4 flex-grow overflow-y-auto py-4">
-            {root.navigation.header.linksNew.map(
+            {/* {root.navigation.header.linksNew.map(
               (link: LinkObject, index: number) => {
                 return (
                   <Button
@@ -100,18 +100,18 @@ export const HeaderMobile: React.FC<HeaderMobileProps> = ({
                   </Button>
                 );
               }
-            )}
+            )} */}
           </div>
 
           <div className="mt-auto pt-4 mb-6">
             <div className="flex lg:flex-col justify-center items-center gap-2 lg:gap-8">
-              <HeaderFooter social={root.social} />
+              {/* <HeaderFooter social={root.social} /> */}
             </div>
           </div>
 
-          <div className="flex items-center justify-center">
+          {/* <div className="flex items-center justify-center">
             <h4 className="text-secondary text-md lg:text-xl">{`${new Date().getFullYear()} © Felix Hu`}</h4>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
