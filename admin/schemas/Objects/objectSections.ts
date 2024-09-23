@@ -17,6 +17,10 @@ export default defineType({
       title: 'Text Columns',
       type: 'objectTextColumns',
     },
+    {
+      title: 'Social Media',
+      type: 'objectSocialSection',
+    },
     // {
     //   title: 'Tags',
     //   type: 'objectTags',

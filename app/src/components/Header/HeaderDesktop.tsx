@@ -5,7 +5,7 @@ import {
 } from "@remix-run/react";
 import { RootLoaderData } from "@app/types/global";
 import { Button } from "@app/theme/ui/button";
-import { useLink } from "@app/hooks/useLink";
+import useLink from "@app/hooks/useLink";
 import { cn } from "@app/utils/utils";
 
 type HeaderDesktopProps = {
@@ -14,19 +14,25 @@ type HeaderDesktopProps = {
 
 export const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ isScrolled }) => {
   const root = useRouteLoaderData("root") as RootLoaderData;
-  const { linkBuilder } = useLink();
-
-  //TODO: FINISH NAVIGATION
+  const { urlResolver } = useLink();
 
   return (
     <>
       <div
         className={cn(
-          "hidden lg:block mx-auto px-8 py-4 border-bsi-white border-b-[1px] bg-transparent sticky top-0 z-50 -mb-[100%] transition-background ease-in-out duration-100",
-          isScrolled && "bg-bsi-black"
+          "hidden lg:block mx-auto pt-4 border-bsi-white border-b-[1px] bg-transparent sticky top-0 z-50 -mb-[100%] transition-background ease-in-out duration-100",
+          isScrolled ? "bg-bsi-black" : "bg-black bg-opacity-50",
+          root.navigation.header && root.navigation.header.links && "pb-1"
         )}
       >
-        <div className="lg:flex items-center justify-between gap-2 lg:gap-8">
+        <div
+          className={cn(
+            "lg:flex items-center justify-between gap-2 lg:gap-8 border-bsi-white px-8",
+            root.navigation.header &&
+              root.navigation.header.links &&
+              "border-b-[1px] pb-4"
+          )}
+        >
           <RemixLink to="/">
             <div className="flex items-center gap-2">
               <img className="w-[3rem] h-[3rem]" src="/icons/BSIIconN.svg" />
@@ -55,6 +61,19 @@ export const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ isScrolled }) => {
             </div>
           )}
         </div>
+
+        {root.navigation.header && root.navigation.header.links && (
+          <nav className="flex gap-4 pt-1 px-8">
+            {root.navigation.header.links.map((link, index) => {
+              const builtLink = urlResolver(link);
+              return (
+                <Button key={index} asChild variant="link">
+                  <RemixLink to={builtLink.url}>{builtLink.label}</RemixLink>
+                </Button>
+              );
+            })}
+          </nav>
+        )}
       </div>
 
       {/* <div className="flex items-center justify-center">

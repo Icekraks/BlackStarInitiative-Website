@@ -10,7 +10,7 @@ import {
 import { SanityClient } from "@root/server";
 
 export default function Index() {
-  const root = useRouteLoaderData("root") as RootLoaderData;
+
   const { sections } = useLoaderData<typeof loader>();
   return (
     <div>

@@ -1,4 +1,5 @@
 import {
+  Internal,
   ObjectSections,
   SanityImageAsset,
   SanityImageCrop,
@@ -35,7 +36,7 @@ export type Navigation = {
 
 export type LinkObject = {
   type: boolean;
-  internal?: Link;
+  internal?: Internal;
   external?: Link;
 };
 
@@ -50,6 +51,13 @@ export type Image = {
   asset: SanityReference<SanityImageAsset>;
   crop?: SanityImageCrop;
   hotspot?: SanityImageHotspot;
+};
+
+export type IconProps = {
+  className?: string;
+  width?: string | number;
+  height?: string | number;
+  fill?: string;
 };
 
 export type ExtractType<T> = T extends Array<infer U> ? U : never;

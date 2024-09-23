@@ -8,6 +8,7 @@ import FeaturedCarousel from "@app/components/Sections/FeaturedCarousel/Featured
 import Contact from "@app/components/Sections/Contact/Contact";
 import { cn } from "@app/utils/utils";
 import TextColumns from "@app/components/Sections/TextColumns/TextColumns";
+import SocialSection from "@app/components/Sections/SocialSection/SocialSection";
 
 type Props = {
   sections: ObjectSections;
@@ -22,8 +23,10 @@ const sectionsComponents: any = {
   FeaturedCarousel,
   Contact,
   TextColumns,
+  SocialSection,
 };
 
+//This component is responsible for rendering the sections of the page
 const Sections: React.FC<Props> = ({ sections }) => {
   return sections ? (
     <>

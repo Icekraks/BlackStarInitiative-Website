@@ -16,6 +16,8 @@ import objectFeaturedCarousel from './Objects/Sections/objectFeaturedCarousel'
 import objectContact from './Objects/Sections/objectContact'
 import carouselObject from './Objects/Sections/objectCarouselObject'
 import objectInternal from './Objects/InternalObject'
+import objectTextColumn from './Objects/objectTextColumn'
+import objectSocialSection from './Objects/Sections/objectSocialSection'
 
 import navigation from './Navigation'
 import settingsMenus from './Settings/SettingsMenus'
@@ -41,6 +43,8 @@ const objects = [
   objectInternal,
   FlexibleLink,
   BrandColours,
+  objectTextColumn,
+  objectSocialSection,
 ]
 
 export const schemaTypes = [...pages, ...settings, ...objects]

@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'objectTextColumns',
-  title: 'Text Columns Section',
+  title: 'Text Column',
+  name: 'objectTextColumn',
   type: 'object',
   fields: [
     defineField({
@@ -13,15 +13,9 @@ export default defineType({
       description: 'Use a pair # to colour the text red.',
     }),
     defineField({
-      name: 'columns',
-      title: 'Columns',
-      type: 'array',
-      of: [{type: 'objectTextColumn'}],
-    }),
-    defineField({
-      name: 'background',
-      title: 'Background',
-      type: 'brandColours',
+      name: 'description',
+      title: 'Description',
+      type: 'text',
     }),
   ],
   preview: {

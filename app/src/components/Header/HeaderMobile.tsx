@@ -23,12 +23,12 @@ export const HeaderMobile: React.FC<HeaderMobileProps> = ({
       <div
         className={cn(
           "flex lg:hidden items-center justify-between py-2 -mb-[100%] px-4 border-b-[1px] border-bsi-white transition-background ease-in-out duration-100",
-          isScrolled && "bg-bsi-black"
+          isScrolled ? "bg-bsi-black" : "bg-black bg-opacity-50"
         )}
       >
         <Button
           variant="default"
-          className="z-50 px-2"
+          className="z-50 px-2 bg-transparent"
           onClick={() => {
             setIsOpen(!isOpen);
           }}
