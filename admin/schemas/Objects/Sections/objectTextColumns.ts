@@ -9,6 +9,7 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'columns',
@@ -32,6 +33,11 @@ export default defineType({
           ],
         },
       ],
+    }),
+    defineField({
+      name: 'background',
+      title: 'Background',
+      type: 'brandColours',
     }),
   ],
   preview: {

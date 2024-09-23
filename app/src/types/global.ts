@@ -30,13 +30,13 @@ export type SocialMedia = {
 
 export type Navigation = {
   title: string;
-  links: Link[];
-  linksNew: LinkObject[];
+  links: LinkObject[];
 };
 
 export type LinkObject = {
-  icon: string;
-  link: Link;
+  type: boolean;
+  internal?: Link;
+  external?: Link;
 };
 
 export type Link = {

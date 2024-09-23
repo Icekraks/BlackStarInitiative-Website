@@ -17,7 +17,6 @@ export default defineType({
       type: 'reference',
       to: [{type: 'navigation'}],
       weak: true,
-      hidden: true, // This field is hidden, please enable when submenus are needed.
     }),
     defineField({
       name: 'footer',
@@ -25,7 +24,6 @@ export default defineType({
       type: 'reference',
       to: [{type: 'navigation'}],
       weak: true,
-      hidden: true,
     }),
   ],
   preview: {

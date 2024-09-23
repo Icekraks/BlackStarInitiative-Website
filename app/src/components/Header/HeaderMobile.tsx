@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import { Button } from "@app/theme/ui/button";
 import type { RootLoaderData } from "@app/types/global";
 import { Link as RemixLink, useRouteLoaderData } from "@remix-run/react";
@@ -10,17 +8,24 @@ import { Menu, X } from "lucide-react";
 export type HeaderMobileProps = {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
+  isScrolled: boolean;
 };
 
 export const HeaderMobile: React.FC<HeaderMobileProps> = ({
   isOpen,
   setIsOpen,
+  isScrolled,
 }: HeaderMobileProps) => {
   const root = useRouteLoaderData("root") as RootLoaderData;
 
   return (
     <>
-      <div className="flex lg:hidden items-center justify-between py-2">
+      <div
+        className={cn(
+          "flex lg:hidden items-center justify-between py-2 -mb-[100%] px-4 border-b-[1px] border-bsi-white transition-background ease-in-out duration-100",
+          isScrolled && "bg-bsi-black"
+        )}
+      >
         <Button
           variant="default"
           className="z-50 px-2"

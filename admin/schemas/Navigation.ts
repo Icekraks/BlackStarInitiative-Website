@@ -12,37 +12,12 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'linksNew',
+      name: 'links',
       title: 'Links',
       type: 'array',
       of: [
         {
-          type: 'object',
-          fields: [
-            {
-              name: 'icon',
-              title: 'Icon',
-              type: 'string',
-              options: {
-                list: [
-                  {title: 'About', value: 'about'},
-                  {title: 'Contact', value: 'contact'},
-                  {title: 'Components', value: 'components'},
-                  {title: 'Other', value: 'other'},
-                ],
-              },
-            },
-            {
-              name: 'link',
-              title: 'Link',
-              type: 'link',
-            },
-          ],
-          preview: {
-            select: {
-              title: 'link.title',
-            },
-          },
+          type: 'flexibleLink',
         },
       ],
     }),

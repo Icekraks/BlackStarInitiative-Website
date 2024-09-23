@@ -1,6 +1,9 @@
-export const TEXT_SECTION_FRAGMENT = `
+export const TEXT_COLUMNS_SECTION_FRAGMENT = `
   _type,
   _key,
   title,
   columns[],
+  background {
+    colour
+  }
 `;

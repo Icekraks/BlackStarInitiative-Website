@@ -15,10 +15,31 @@ export const Header: React.FC = () => {
     }
   }, [isMd]);
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="bg-bsi-black w-full sticky top-0 left-0 z-10">
-      <HeaderDesktop />
-      <HeaderMobile isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
+    <header className="w-full sticky top-0 left-0 z-10">
+      <HeaderDesktop isScrolled={isScrolled} />
+      <HeaderMobile
+        isScrolled={isScrolled}
+        isOpen={isMenuOpen}
+        setIsOpen={setIsMenuOpen}
+      />
     </header>
   );
 };

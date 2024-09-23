@@ -1,11 +1,11 @@
-import { LINK_FRAGMENT } from "./link";
+import { NAVIGATION_FRAGMENT } from "./navigationFragment";
 
 export const HEADER_FRAGMENT = `
 headerTitle,
 header-> {
-  ${LINK_FRAGMENT}
+  ${NAVIGATION_FRAGMENT}
 },
 footer->{
-  ${LINK_FRAGMENT}
+  ${NAVIGATION_FRAGMENT}
 }
 `;

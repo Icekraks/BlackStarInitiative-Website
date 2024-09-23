@@ -2,6 +2,9 @@ import page from './page'
 import home from './home'
 
 import linkObject from './Objects/LinkObject'
+import FlexibleLink from './Objects/flexibleLink'
+import BrandColours from './Objects/BrandColours'
+
 import objectSections from './Objects/objectSections'
 import objectHero from './Objects/Sections/objectHero'
 import objectText from './Objects/Sections/objectText'
@@ -12,6 +15,7 @@ import featuredObject from './Objects/Sections/objectFeaturedObject'
 import objectFeaturedCarousel from './Objects/Sections/objectFeaturedCarousel'
 import objectContact from './Objects/Sections/objectContact'
 import carouselObject from './Objects/Sections/objectCarouselObject'
+import objectInternal from './Objects/InternalObject'
 
 import navigation from './Navigation'
 import settingsMenus from './Settings/SettingsMenus'
@@ -34,6 +38,9 @@ const objects = [
   objectTags,
   objectContact,
   carouselObject,
+  objectInternal,
+  FlexibleLink,
+  BrandColours,
 ]
 
 export const schemaTypes = [...pages, ...settings, ...objects]

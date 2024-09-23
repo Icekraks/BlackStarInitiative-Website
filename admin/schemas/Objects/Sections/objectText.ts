@@ -16,6 +16,11 @@ export default defineType({
       title: 'Description',
       type: 'text',
     }),
+    defineField({
+      name: 'background',
+      title: 'Background',
+      type: 'brandColours',
+    }),
   ],
   preview: {
     select: {
