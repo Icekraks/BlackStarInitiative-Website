@@ -15,28 +15,7 @@ const Hero: React.FC<HeroProps> = ({
   image,
   showScrollDown = false,
 }) => {
-  console.log(image);
   return (
-    // .o-responsive-image {
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   width: 100%;
-
-    //   @supports(object-fit: cover) {
-    //     height: 100%;
-    //     object-fit: cover;
-    //   }
-    // }
-
-    // .o-responsive-image-container {
-    //   position: relative;
-    //   overflow: hidden;
-    //   z-index: $s-z--responsive-image;
-
-    //   // To be overridden by component class
-    //   padding-bottom: 100%;
-    // }
     <>
       <div className="relative  h-[100dvh] max-h-[750px] lg:max-h-[1000px]">
         <div className="flex flex-col-reverse lg:flex-row items-center justify-center">
@@ -51,9 +30,15 @@ const Hero: React.FC<HeroProps> = ({
             <div className="absolute inset-0 bg-black bg-opacity-50" />
           </div>
         </div>
-        <div className="px-4 flex w-full max-w-[500px] flex-col gap-3 absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2">
-          <h1 className="heading-1 text-bsi-red">{title}</h1>
-          <h4 className="heading-2 text-xl text-bsi-white">{subtitle}</h4>
+        <div className="px-4 flex w-full flex-col items-center justify-center gap-3 absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2">
+          <div className="flex flex-col">
+            <h1 className="heading-1 text-2xl md:4xl lg:text-6xl text-bsi-red">
+              {title}
+            </h1>
+            <h4 className="heading-2 text-xl md:2xl lg:text-4xl text-bsi-white">
+              {subtitle}
+            </h4>
+          </div>
         </div>
         {showScrollDown && (
           <div
