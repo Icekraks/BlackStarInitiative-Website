@@ -4,9 +4,12 @@
 
 ## Development
 
+Make sure you provide an .env, there is an example of it with all the fields that need to be filled out.
+
 From your terminal:
 
 ```sh
+pnpm install
 pnpm start
 ```
 
@@ -17,13 +20,13 @@ This starts your app in development mode, rebuilding assets on file changes.
 First, build your app for production:
 
 ```sh
-npm run build
+pnpm run build
 ```
 
 Then run the app in production mode:
 
 ```sh
-npm start
+pnpm serve
 ```
 
 Now you'll need to pick a host to deploy it to.
