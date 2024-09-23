@@ -25,6 +25,9 @@ export const Header: React.FC = () => {
         setIsScrolled(false);
       }
     };
+
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {

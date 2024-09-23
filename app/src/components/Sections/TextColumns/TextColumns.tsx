@@ -12,13 +12,13 @@ const TextColumns: React.FC<TextColumnProps> = ({
   sectionIndex,
 }) => {
   const splitTitle = title.split("#");
-  const backgroundColour = `bg-bsi-${background?.colour || "pure-black"}`;
+  const backgroundColour = `var(--bsi-${background?.colour || "pure-black"})`;
   return (
     <div
+      style={{ background: backgroundColour }}
       className={cn(
         "relative pb-12 lg:pb-16 2xl:pb-24 px-4 md:px-16",
-        sectionIndex !== 0 ? "pt-12 lg:pt-16 2xl:pt-24" : "",
-        backgroundColour
+        sectionIndex !== 0 ? "pt-12 lg:pt-16 2xl:pt-24" : ""
       )}
     >
       <div className="flex flex-col w-full items-center max-w-[1440px] mx-auto">

@@ -53,6 +53,8 @@ const SocialSection: React.FC<SocialSectionProps> = ({
 
   const backgroundColour = `bg-bsi-${background?.colour || "pure-black"}`;
 
+  console
+
   return (
     <div
       className={cn(
