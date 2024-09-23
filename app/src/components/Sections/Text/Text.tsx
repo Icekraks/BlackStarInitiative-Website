@@ -1,7 +1,5 @@
-import { Button } from "@app/theme/ui/button";
 import { ObjectText } from "@app/types/schema";
 import { cn } from "@app/utils/utils";
-import { Link } from "@remix-run/react";
 
 export type TextProps = ObjectText & {
   sectionIndex: number;
@@ -15,40 +13,49 @@ const Text: React.FC<TextProps> = ({
   cta,
   sectionIndex,
 }) => {
+  const splitTitle = title.split("#");
   return (
     <div
       className={cn(
-        "relative mb-12 lg:mb-16 2xl:mb-24 px-0 md:px-16",
-        sectionIndex !== 0 ? "mt-12 lg:mt-16 2xl:mt-24" : ""
+        "relative pb-12 lg:pb-16 2xl:pb-24 px-5 md:px-16 bg-bsi-pure-black",
+        sectionIndex !== 0 ? "pt-12 lg:pt-16 2xl:pt-24" : ""
       )}
     >
       <div className="flex flex-col w-full items-center max-w-[1440px] mx-auto">
         {sectionIndex === 0 ? (
-          <h1 className="text-primary text-4xl lg:text-6xl font-bold mb-8 w-full">
-            {title}
+          <h1 className="heading-2 text-bsi-white text-2xl lg:text-4xl font-bold mb-5 w-full text-center">
+            {splitTitle.map((titlePart, index) => (
+              <span
+                key={index}
+                className={cn(
+                  "heading-2 text-bsi-white text-2xl lg:text-4xl font-bold mb-4 w-full",
+                  index === 1 ? "text-bsi-red" : "text-bsi-grey"
+                )}
+              >
+                {titlePart}
+              </span>
+            ))}
           </h1>
         ) : (
-          <h2 className="text-primary text-2xl lg:text-4xl font-bold mb-4 w-full">
-            {title}
+          <h2 className="heading-2 text-bsi-white text-2xl lg:text-4xl font-bold mb-5 w-full text-center">
+            {splitTitle.map((titlePart, index) => (
+              <span
+                key={index}
+                className={cn(
+                  "heading-2 text-bsi-white text-2xl lg:text-4xl font-bold mb-4 w-full",
+                  index === 1 ? "text-bsi-red" : "text-bsi-grey"
+                )}
+              >
+                {titlePart}
+              </span>
+            ))}
           </h2>
         )}
-        <p className="text-primary md:px-10 lg:px-16 mb-8 w-full">
-          {description}
-        </p>
-        <div className="flex gap-4 w-full md:px-10 lg:px-16">
-          {file && (
-            <Button variant="default" asChild>
-              <Link to={file.asset.url} download target="_blank">
-                {fileLabel ? fileLabel : "Get my CV"}
-              </Link>
-            </Button>
-          )}
-          {cta && (
-            <Button variant="default" asChild>
-              <Link to={cta.link}>{cta.title}</Link>
-            </Button>
-          )}
-        </div>
+        {description && (
+          <p className="text-bsi-white px-4 md:px-10 lg:px-16 mb-8 w-full">
+            {description}
+          </p>
+        )}
       </div>
     </div>
   );

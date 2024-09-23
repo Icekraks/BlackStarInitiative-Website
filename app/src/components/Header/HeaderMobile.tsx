@@ -20,21 +20,26 @@ export const HeaderMobile: React.FC<HeaderMobileProps> = ({
 
   return (
     <>
-      <div className="flex lg:hidden items-center justify-between">
+      <div className="flex lg:hidden items-center justify-between py-2">
         <Button
-          variant="secondary"
-          className="z-50"
+          variant="default"
+          className="z-50 px-2"
           onClick={() => {
             setIsOpen(!isOpen);
           }}
         >
           <Menu />
         </Button>
-        {/* {root.navigation.headerTitle ? (
-          <RemixLink to={"/"}>
-            <h4 className="font-sans">{root.navigation.headerTitle}</h4>
+        <div className="flex ml-auto mr-auto justify-center">
+          <RemixLink to="/">
+            <div className="flex items-center gap-2">
+              <img className="w-[3rem] h-[3rem]" src="/icons/BSIIconN.svg" />
+              <h1 className="heading-1 text-bsi-red text-base">
+                {root.navigation.headerTitle || "Black Star Initiative"}
+              </h1>
+            </div>
           </RemixLink>
-        ) : null} */}
+        </div>
       </div>
       <div
         onClick={() => setIsOpen(false)}
@@ -45,7 +50,7 @@ export const HeaderMobile: React.FC<HeaderMobileProps> = ({
       />
       <div
         className={cn(
-          "lg:hidden fixed transition-transform top-0 left-0 w-[90dvw] max-w-[400px] bg-[#002b36] h-[100dvh] px-4 pt-4 pb-4 z-50",
+          "lg:hidden fixed transition-transform top-0 left-0 w-[90dvw] max-w-[400px] bg-bsi-black h-[100dvh] px-4 pt-4 pb-4 z-50",
           isOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
@@ -105,7 +110,7 @@ export const HeaderMobile: React.FC<HeaderMobileProps> = ({
 
           <div className="mt-auto pt-4 mb-6">
             <div className="flex lg:flex-col justify-center items-center gap-2 lg:gap-8">
-              {/* <HeaderFooter social={root.social} /> */}
+              <HeaderFooter social={root.social} />
             </div>
           </div>
 

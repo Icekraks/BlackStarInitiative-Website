@@ -6,9 +6,9 @@ export const ROOT_QUERY = `
       ${HEADER_FRAGMENT}
     },
     "social": *[_type == "settingsSocial"][0] {
-      email,
-      linkedin,
-      github,
+      twitter,
+      patreon,
+      discord,
       youtube 
     },
     "notFound": *[_type == "settingsNotFound"][0] {

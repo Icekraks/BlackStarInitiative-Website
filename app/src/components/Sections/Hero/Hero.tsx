@@ -11,52 +11,49 @@ type HeroProps = ObjectHero & {
 
 const Hero: React.FC<HeroProps> = ({
   title,
-  pretitle,
   subtitle,
-  description,
-  file,
   image,
   showScrollDown = false,
 }) => {
+  console.log(image);
   return (
+    // .o-responsive-image {
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 100%;
+
+    //   @supports(object-fit: cover) {
+    //     height: 100%;
+    //     object-fit: cover;
+    //   }
+    // }
+
+    // .o-responsive-image-container {
+    //   position: relative;
+    //   overflow: hidden;
+    //   z-index: $s-z--responsive-image;
+
+    //   // To be overridden by component class
+    //   padding-bottom: 100%;
+    // }
     <>
-      <div className="relative my-12 lg:my-16 2xl:my-24 px-8 lg:px-16 h-[100dvh] max-h-[750px] lg:max-h-[1000px]">
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-x-[10rem] gap-y-[2.5rem] max-w-[1440px] mx-auto">
-          <div className="flex flex-col gap-3">
-            <p>
-              {pretitle && (
-                <span className="text-[#b58900] font-bold">{pretitle}</span>
-              )}
-            </p>
-            <h1 className="text-4xl lg:text-6xl font-bold text-[#002b36]">
-              {title}
-            </h1>
-            <h4 className="text-[#cb4b16]">{subtitle}</h4>
-            {description && (
-              <p className="text-primary max-w-[450px]">
-                {description.replace(
-                  "{x}",
-                  `${new Date().getFullYear() - 2020}`
-                )}
-              </p>
+      <div className="relative  h-[100dvh] max-h-[750px] lg:max-h-[1000px]">
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-center">
+          <div className="absolute inset-0">
+            {image && image.asset && (
+              <ResponsiveImage
+                className="w-full h-full object-cover"
+                src={image.asset.url}
+                alt={image.asset.altText}
+              />
             )}
-            <div>
-              {file && (
-                <Button variant="default" asChild>
-                  <a href={file.asset.url} download target="_blank">
-                    Get my CV
-                  </a>
-                </Button>
-              )}
-            </div>
+            <div className="absolute inset-0 bg-black bg-opacity-50" />
           </div>
-          {image && image.asset && (
-            <ResponsiveImage
-              className="w-[375px] rounded-lg overflow-hidden"
-              src={image.asset.url}
-              alt={image.asset.altText}
-            />
-          )}
+        </div>
+        <div className="px-4 flex w-full max-w-[500px] flex-col gap-3 absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2">
+          <h1 className="heading-1 text-bsi-red">{title}</h1>
+          <h4 className="heading-2 text-xl text-bsi-white">{subtitle}</h4>
         </div>
         {showScrollDown && (
           <div
@@ -66,10 +63,10 @@ const Hero: React.FC<HeroProps> = ({
                 element.scrollIntoView({ behavior: "smooth" });
               }
             }}
-            className="hidden lg:block bottom-8 left-[50%] translate-x-[50%] absolute animate-bounce cursor-pointer"
+            className="block bottom-8 left-[50%] translate-x-[50%] absolute animate-bounce cursor-pointer"
           >
-            <Mouse size={32} color="#002b36" />
-            <ChevronsDown size={32} color="#002b36" />
+            <Mouse size={32} color="var(--bsi-white)" />
+            <ChevronsDown size={32} color="var(--bsi-white)" />
           </div>
         )}
       </div>

@@ -19,6 +19,12 @@ export default {
     },
     extend: {
       colors: {
+        "bsi-red": "var(--bsi-red)",
+        "bsi-black": "var(--bsi-black)",
+        "bsi-grey": "var(--bsi-grey)",
+        "bsi-white": "var(--bsi-white)",
+        "bsi-pure-white": "var(--bsi-pure-white)",
+        "bsi-pure-black": "var(--bsi-pure-black)",
         border: "#b58900",
         borderAlt: "#fdf6e3",
         input: "hsl(var(--input))",
@@ -26,12 +32,17 @@ export default {
         background: "hsl(var(--primary))",
         foreground: "hsl(var(--primary-foreground))",
         primary: {
-          DEFAULT: "var(--primary)",
-          foreground: "var(--primary-foreground)",
+          DEFAULT: "var(--bsi-black)",
+          foreground: "var(--bsi-white)",
         },
         secondary: {
-          DEFAULT: "#fdf6e3",
-          foreground: "#586e75",
+          DEFAULT: "var(--bsi-white)",
+          foreground: "var(--bsi-black)",
+        },
+        tertiary: {
+          DEFAULT: "var(--bsi-red)",
+          hover: "var(--bsi-black-hover)",
+          foreground: "var(--bsi-white)",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -55,8 +66,9 @@ export default {
         },
       },
       fontFamily: {
-        serif: ["NewYork", "serif"],
-        sans: ["SFPro", "sans-serif"],
+        body: ["CarbonBold", "sans-serif"],
+        heading2: ["Orbitron", "sans-serif"],
+        heading1: ["XPNS", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -1,57 +1,68 @@
-@font-face {
-  font-family: "SFPro";
-  src: url("/fonts/SFpromedium.woff2") format("woff2"),
-    url("/fonts/SFpromedium.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SFPro";
-  src: url("/fonts/SFprobold.woff2") format("woff2"),
-    url("/fonts/SFprobold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SFPro";
-  src: url("/fonts/SFproitalic.woff2") format("woff2"),
-    url("/fonts/SFproitalic.woff") format("woff");
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "NewYork";
-  src: url("/fonts/NewYork.woff2") format("woff2"),
-    url("/fonts/NewYork.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "NewYork";
-  src: url("/fonts/NewYorkMedium-Bold.woff2") format("woff2"),
-    url("/fonts/NewYorkMedium-Bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "NewYork";
-  src: url("/fonts/NewYorkItalic.woff2") format("woff2"),
-    url("/fonts/NewYorkItalic.woff") format("woff");
-  font-weight: bold;
-  font-style: italic;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Body Font */
+@font-face {
+  font-family: "CarbonBold";
+  src: url("/fonts/CarbonBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Orbitron";
+  src: url("/fonts/Orbitron-Regular.ttf") format("truetype");
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Orbitron";
+  src: url("/fonts/Orbitron-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Orbitron";
+  src: url("/fonts/Orbitron-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Orbitron";
+  src: url("/fonts/Orbitron-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Orbitron";
+  src: url("/fonts/Orbitron-ExtraBold.ttf") format("truetype");
+  font-weight: bolder;
+  font-style: normal;
+}
+
+/* Heading Font */
+@font-face {
+  font-family: "XPNS";
+  src: url("/fonts/XPNS.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @layer base {
   :root {
+    --bsi-red: #da2128;
+    --bsi-white: #f1f2f2;
+    --bsi-black: #282828;
+    --bsi-pure-black: #000000;
+    --bsi-pure-white: #ffffff;
+    --bsi-grey: #969696;
+    --bsi-black-hover: #323232;
+
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
 
@@ -60,12 +71,6 @@
 
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-
-    --primary: #002b36;
-    --primary-foreground: 0 0% 98%;
-
-    --secondary: #fdf6e3;
-    --secondary-foreground: #586e75;
 
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
@@ -82,36 +87,6 @@
 
     --radius: 0.5rem;
   }
-
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-  }
 }
 
 @layer base {
@@ -124,15 +99,28 @@
   }
 }
 
-body {
-  font-family: "SFPro", ui-sans-serif, system-ui;
-}
+@layer components {
+  .heading-1 {
+    @apply text-2xl lg:text-4xl font-heading1;
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "NewYork", ui-serif, serif;
+  .heading-2,
+  .heading-3,
+  .heading-4,
+  .heading-5,
+  .heading-6 {
+    @apply font-heading2;
+  }
+
+  p,
+  a,
+  span,
+  pre,
+  code,
+  blockquote,
+  ol,
+  ul,
+  li {
+    @apply font-body;
+  }
 }

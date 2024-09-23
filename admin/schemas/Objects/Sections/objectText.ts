@@ -9,26 +9,12 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'description',
       title: 'Description',
       type: 'text',
-    }),
-    defineField({
-      name: 'fileLabel',
-      title: 'File Button Label',
-      type: 'string',
-    }),
-    defineField({
-      name: 'file',
-      title: 'File',
-      type: 'file',
-    }),
-    defineField({
-      name: 'cta',
-      title: 'CTA',
-      type: 'link',
     }),
   ],
   preview: {

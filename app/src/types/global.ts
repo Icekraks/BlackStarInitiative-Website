@@ -22,9 +22,9 @@ export type NotFound = {
 };
 
 export type SocialMedia = {
-  email: string;
-  linkedin: string;
-  github: string;
+  twitter: string;
+  patreon: string;
+  discord: string;
   youtube: string;
 };
 

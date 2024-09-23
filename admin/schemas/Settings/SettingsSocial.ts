@@ -6,28 +6,29 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'email',
-      title: 'Email',
+      name: 'twitter',
+      title: 'Twitter',
       type: 'string',
-      initialValue: 'felix.hu847@gmail.com.au',
+      initialValue: 'https://x.com/BSI_SC',
     }),
     defineField({
-      name: 'linkedin',
-      title: 'LinkedIn',
+      name: 'patreon',
+      title: 'Patreon',
       type: 'string',
-      initialValue: 'https://www.linkedin.com/in/felixhu847/',
+      initialValue: 'https://www.patreon.com/bsi',
     }),
     defineField({
-      name: 'github',
-      title: 'GitHub',
+      name: 'discord',
+      title: 'Discord',
       type: 'string',
-      initialValue: 'https://github.com/Icekraks',
+      initialValue: 'https://discord.com/invite/hM47S3q',
     }),
+
     defineField({
       name: 'youtube',
       title: 'YouTube',
       type: 'string',
-      initialValue: 'https://www.youtube.com/@IcekraksOfficial',
+      initialValue: 'https://www.youtube.com/channel/UCMHZsqaouoPa-Udzbj_2b9Q',
     }),
   ],
 })
