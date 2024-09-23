@@ -1,4 +1,4 @@
-# Welcome to Icekrak's Portfolio!
+# Welcome to Black Star Initiative Website!
 
 - [Remix Docs](https://remix.run/docs)
 
