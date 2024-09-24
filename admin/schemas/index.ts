@@ -16,8 +16,10 @@ import objectFeaturedCarousel from './Objects/Sections/objectFeaturedCarousel'
 import objectContact from './Objects/Sections/objectContact'
 import carouselObject from './Objects/Sections/objectCarouselObject'
 import objectInternal from './Objects/InternalObject'
+
 import objectTextColumn from './Objects/objectTextColumn'
 import objectSocialSection from './Objects/Sections/objectSocialSection'
+import objectFeaturedBrands from './Objects/Sections/objectFeaturedBrands'
 
 import navigation from './Navigation'
 import settingsMenus from './Settings/SettingsMenus'
@@ -34,19 +36,23 @@ const objects = [
   objectFeaturedCarousel,
   objectSections,
   linkObject,
-  objectHero,
-  objectText,
-  objectTextColumns,
   objectTags,
   objectContact,
   carouselObject,
   objectInternal,
   FlexibleLink,
   BrandColours,
-  objectTextColumn,
-  objectSocialSection,
 ]
 
-export const schemaTypes = [...pages, ...settings, ...objects]
+const sections = [
+  objectHero,
+  objectText,
+  objectTextColumns,
+  objectTextColumn,
+  objectSocialSection,
+  objectFeaturedBrands,
+]
+
+export const schemaTypes = [...pages, ...sections, ...settings, ...objects]
 
 export default schemaTypes

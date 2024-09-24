@@ -68,7 +68,13 @@ export const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ isScrolled }) => {
               const builtLink = urlResolver(link);
               return (
                 <Button key={index} asChild variant="link">
-                  <RemixLink to={builtLink.url}>{builtLink.label}</RemixLink>
+                  <RemixLink
+                    to={builtLink.url}
+                    target={builtLink.external ? "_blank" : ""}
+                    rel="noreferrer"
+                  >
+                    {builtLink.label}
+                  </RemixLink>
                 </Button>
               );
             })}

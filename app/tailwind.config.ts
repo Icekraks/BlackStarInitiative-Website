@@ -57,6 +57,10 @@ export default {
           hover: "var(--bsi-black-hover)",
           foreground: "var(--bsi-white)",
         },
+        quaternary: {
+          DEFAULT: "var(--bsi-pure-black)",
+          foreground: "var(--bsi-white)",
+        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",

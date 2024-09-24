@@ -21,6 +21,10 @@ export default defineType({
       title: 'Social Media',
       type: 'objectSocialSection',
     },
+    {
+      title: 'Featured Brands',
+      type: 'objectFeaturedBrands',
+    },
     // {
     //   title: 'Tags',
     //   type: 'objectTags',

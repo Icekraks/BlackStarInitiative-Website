@@ -37,12 +37,14 @@ export const Header: React.FC = () => {
 
   return (
     <header className="w-full sticky top-0 left-0 z-10">
-      <HeaderDesktop isScrolled={isScrolled} />
-      <HeaderMobile
-        isScrolled={isScrolled}
-        isOpen={isMenuOpen}
-        setIsOpen={setIsMenuOpen}
-      />
+      <div id="headerElement">
+        <HeaderDesktop isScrolled={isScrolled} />
+        <HeaderMobile
+          isScrolled={isScrolled}
+          isOpen={isMenuOpen}
+          setIsOpen={setIsMenuOpen}
+        />
+      </div>
     </header>
   );
 };

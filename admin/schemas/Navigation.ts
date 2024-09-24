@@ -10,6 +10,7 @@ export default defineType({
       title: 'Title',
       type: 'string',
       validation: (Rule) => Rule.required(),
+      codegen: {required: true},
     }),
     defineField({
       name: 'links',

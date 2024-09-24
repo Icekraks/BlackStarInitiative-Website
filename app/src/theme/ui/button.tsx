@@ -19,6 +19,8 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground",
         tertiary:
           "flex bg-tertiary text-tertiary-foreground hover:text-tertiary-hover",
+        quaternary:
+          "bg-secondary text-secondary-foreground hover:bg-quaternary hover:text-quaternary-foreground",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary-foreground underline-offset-4 hover:underline",
         linkInvert:

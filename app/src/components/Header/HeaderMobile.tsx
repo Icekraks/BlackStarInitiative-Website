@@ -1,9 +1,10 @@
 import { Button } from "@app/theme/ui/button";
-import type { RootLoaderData } from "@app/types/global";
+import type { LinkObject, RootLoaderData } from "@app/types/global";
 import { Link as RemixLink, useRouteLoaderData } from "@remix-run/react";
 import { HeaderFooter } from "@app/components/Header/HeaderFooter";
 import { cn } from "@app/utils/utils";
 import { Menu, X } from "lucide-react";
+import useLink from "@app/hooks/useLink";
 
 export type HeaderMobileProps = {
   isOpen: boolean;
@@ -17,6 +18,7 @@ export const HeaderMobile: React.FC<HeaderMobileProps> = ({
   isScrolled,
 }: HeaderMobileProps) => {
   const root = useRouteLoaderData("root") as RootLoaderData;
+  const { urlResolver } = useLink();
 
   return (
     <>
@@ -67,50 +69,30 @@ export const HeaderMobile: React.FC<HeaderMobileProps> = ({
             </Button>
           </div>
           <div className="flex flex-col gap-4 flex-grow overflow-y-auto py-4">
-            {/* {root.navigation.header.linksNew.map(
+            {root.navigation.header.links.map(
               (link: LinkObject, index: number) => {
+                const resolvedUrl = urlResolver(link);
                 return (
                   <Button
                     key={index}
-                    variant="secondary"
-                    asChild={!link.link.link.includes("#")}
+                    variant="quaternary"
+                    asChild
                     onClick={() => {
-                      if (link.link.link.includes("#")) {
-                        const element = document.querySelector(link.link.link);
-                        if (element) {
-                          setIsOpen(false);
-                          if (index === 0) {
-                            window.location.hash = "";
-                            window.scrollTo({
-                              top: 0,
-                              left: 0,
-                              behavior: "smooth",
-                            });
-                          } else {
-                            window.location.hash = link.link.link;
-                            element.scrollIntoView({ behavior: "smooth" });
-                          }
-                        }
-                      }
                       setIsOpen(false);
                     }}
                   >
-                    {!link.link.link.includes("#") ? (
-                      <RemixLink
-                        key={index}
-                        to={link.link.link}
-                        target={link.link.external ? "_blank" : ""}
-                        rel="noreferrer"
-                      >
-                        {link.link.title}
-                      </RemixLink>
-                    ) : (
-                      link.link.title
-                    )}
+                    <RemixLink
+                      key={index}
+                      to={resolvedUrl.url}
+                      target={resolvedUrl.external ? "_blank" : ""}
+                      rel="noreferrer"
+                    >
+                      {resolvedUrl.label}
+                    </RemixLink>
                   </Button>
                 );
               }
-            )} */}
+            )}
           </div>
 
           <div className="mt-auto pt-4 mb-6">

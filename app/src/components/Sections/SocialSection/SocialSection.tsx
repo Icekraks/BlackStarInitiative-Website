@@ -53,8 +53,6 @@ const SocialSection: React.FC<SocialSectionProps> = ({
 
   const backgroundColour = `bg-bsi-${background?.colour || "pure-black"}`;
 
-  console
-
   return (
     <div
       className={cn(
@@ -75,6 +73,9 @@ const SocialSection: React.FC<SocialSectionProps> = ({
                     ? background?.colour === "red"
                       ? "text-bsi-black"
                       : "text-bsi-red"
+                    : background?.colour === "white" ||
+                      background?.colour === "pure-white"
+                    ? "text-bsi-black"
                     : "text-bsi-white"
                 )}
               >
@@ -93,6 +94,9 @@ const SocialSection: React.FC<SocialSectionProps> = ({
                     ? background?.colour === "red"
                       ? "text-bsi-black"
                       : "text-bsi-red"
+                    : background?.colour === "white" ||
+                      background?.colour === "pure-white"
+                    ? "text-bsi-black"
                     : "text-bsi-white"
                 )}
               >

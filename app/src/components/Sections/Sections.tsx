@@ -9,6 +9,7 @@ import Contact from "@app/components/Sections/Contact/Contact";
 import { cn } from "@app/utils/utils";
 import TextColumns from "@app/components/Sections/TextColumns/TextColumns";
 import SocialSection from "@app/components/Sections/SocialSection/SocialSection";
+import FeaturedBrands from "@app/components/Sections/FeaturedBrands/FeaturedBrands";
 
 type Props = {
   sections: ObjectSections;
@@ -24,6 +25,7 @@ const sectionsComponents: any = {
   Contact,
   TextColumns,
   SocialSection,
+  FeaturedBrands,
 };
 
 //This component is responsible for rendering the sections of the page

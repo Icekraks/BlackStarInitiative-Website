@@ -1,7 +1,6 @@
 import React from "react";
 import type { ObjectHero } from "@app/types/schema";
 import { ResponsiveImage } from "@app/components/ResponsiveImage";
-import { Button } from "@app/theme/ui/button";
 import { ChevronsDown, Mouse } from "lucide-react";
 
 type HeroProps = ObjectHero & {
@@ -45,7 +44,18 @@ const Hero: React.FC<HeroProps> = ({
             onClick={() => {
               const element = document.querySelector("#section-1");
               if (element) {
-                element.scrollIntoView({ behavior: "smooth" });
+                const header: HTMLDivElement | null =
+                  document.querySelector("#headerElement");
+                console.log(header?.offsetHeight);
+                const headerOffset = header?.offsetHeight || 130;
+                const elementPosition =
+                  element.getBoundingClientRect().top + window.scrollY;
+                const offsetPosition = elementPosition - headerOffset;
+
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: "smooth",
+                });
               }
             }}
             className="block bottom-8 left-[50%] translate-x-[50%] absolute animate-bounce cursor-pointer"

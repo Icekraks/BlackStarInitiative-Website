@@ -10,6 +10,7 @@ export default defineType({
       name: 'colour',
       type: 'string',
       validation: (Rule) => Rule.required(),
+      codegen: {required: true},
       options: {
         list: [
           {title: 'Black', value: 'black'},

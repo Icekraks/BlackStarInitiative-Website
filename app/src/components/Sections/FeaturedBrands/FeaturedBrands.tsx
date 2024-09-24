@@ -1,25 +1,18 @@
-import { Button } from "@app/theme/ui/button";
-import { ObjectText } from "@app/types/schema";
+import React from "react";
+import { ObjectFeaturedBrands } from "@app/types/schema";
 import { cn } from "@app/utils/utils";
-import { useState } from "react";
 
-export type TextProps = ObjectText & {
+type FeaturedBrandsProps = ObjectFeaturedBrands & {
   sectionIndex: number;
 };
 
-const Text: React.FC<TextProps> = ({
+const FeaturedBrands: React.FC<FeaturedBrandsProps> = ({
   title,
-  description,
   background,
+  featuredBrand,
   sectionIndex,
 }) => {
   const splitTitle = title.split("#");
-
-  const [readMore, setReadMore] = useState(false);
-  const toggleExpand = () => {
-    setReadMore(!readMore);
-  };
-
   const backgroundColour = `var(--bsi-${background?.colour || "pure-black"})`;
 
   return (
@@ -72,34 +65,22 @@ const Text: React.FC<TextProps> = ({
             ))}
           </h2>
         )}
-        <div className="flex flex-col">
-          {description && (
-            <p className="text-bsi-white px-4 md:px-10 lg:px-16 w-full">
-              <span className="block md:hidden">
-                {readMore
-                  ? description
-                  : `${description.split(" ").slice(0, 50).join(" ")}...`}{" "}
-                {/* Set word limit to 50 */}
-              </span>
 
-              <span className="hidden md:block">{description}</span>
-            </p>
-          )}
-
-          {/* Show "Read More" button only on mobile (hidden on medium and larger screens) */}
-          <div className="md:hidden">
-            <Button
-              variant="link"
-              className="mt-2 md:hidden underline w-auto"
-              onClick={toggleExpand}
-            >
-              {readMore ? "Read Less" : "Read More"}
-            </Button>
+        {featuredBrand?.length && (
+          <div className="flex flex-col lg:flex-row lg:gap-12">
+            {featuredBrand.map((brand, index) => (
+              <div key={index} className="flex flex-col items-center">
+                <div
+                  className="flex w-[10rem] h-[10rem] lg:w-[12rem] lg:h-[12rem] xl:w-[18rem] xl:h-[18rem]"
+                  dangerouslySetInnerHTML={{ __html: brand.image }}
+                />
+              </div>
+            ))}
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
 };
 
-export default Text;
+export default FeaturedBrands;

@@ -6,11 +6,13 @@ const useLink = () => {
       return {
         label: link.external?.title || "",
         url: link.external?.link || "",
+        external: true,
       };
     } else {
       return {
         label: link.internal?.title || "",
         url: `/${link.internal?.document.slug.current}` || "",
+        external: false,
       };
     }
   };

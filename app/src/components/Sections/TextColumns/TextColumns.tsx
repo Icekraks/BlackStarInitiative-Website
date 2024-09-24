@@ -33,6 +33,9 @@ const TextColumns: React.FC<TextColumnProps> = ({
                     ? background?.colour === "red"
                       ? "text-bsi-black"
                       : "text-bsi-red"
+                    : background?.colour === "white" ||
+                      background?.colour === "pure-white"
+                    ? "text-bsi-black"
                     : "text-bsi-white"
                 )}
               >
@@ -47,7 +50,12 @@ const TextColumns: React.FC<TextColumnProps> = ({
                 key={index}
                 className={cn(
                   "heading-2 text-2xl lg:text-4xl font-bold mb-4 w-full",
-                  index === 1 ? "text-bsi-red" : "text-bsi-white"
+                  index === 1
+                    ? "text-bsi-red"
+                    : background?.colour === "white" ||
+                      background?.colour === "pure-white"
+                    ? "text-bsi-black"
+                    : "text-bsi-white"
                 )}
               >
                 {titlePart}
