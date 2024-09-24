@@ -24,6 +24,14 @@ export const structure = (S) => {
                     .documentId('settingsMenus'),
                 ),
               S.listItem()
+                .title('Footer Settings')
+                .child(
+                  S.document()
+                    .title('Footer Settings')
+                    .schemaType('settingsFooter')
+                    .documentId('settingsFooter'),
+                ),
+              S.listItem()
                 .title('Social Media Settings')
                 .child(
                   S.document()

@@ -8,7 +8,7 @@ import { SanityClient } from "@root/server";
 const Page: React.FC = () => {
   const { sections } = useLoaderData<typeof loader>();
   return (
-    <div className="w-[100%] py-12 px-8 lg:py-16 2xl:py-24 lg:px-16">
+    <div>
       <Sections sections={sections} />
     </div>
   );

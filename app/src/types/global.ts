@@ -5,6 +5,7 @@ import {
   SanityImageCrop,
   SanityImageHotspot,
   SanityReference,
+  SettingsFooter,
 } from "./schema";
 
 export type RootLoaderData = {
@@ -15,12 +16,15 @@ export type RootLoaderData = {
   };
   social: SocialMedia;
   notFound: NotFound;
+  footer: Footer;
 };
 
 export type NotFound = {
   title: string;
   description: string;
 };
+
+export type Footer = SettingsFooter & {};
 
 export type SocialMedia = {
   twitter: string;

@@ -14,6 +14,9 @@ export const ROOT_QUERY = `
     "notFound": *[_type == "settingsNotFound"][0] {
       title,
       description
+    },
+    "footer": *[_type == "settingsFooter"][0] {
+      disclaimer
     }
   }
 `;
