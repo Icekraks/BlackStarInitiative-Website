@@ -16,9 +16,13 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'image',
-      title: 'Image',
-      type: 'image',
+      name: 'content',
+      title: 'Content',
+      type: 'array',
+      of: [
+        {title: 'Image', type: 'image'},
+        {title: 'Video', type: 'file'},
+      ],
     }),
     defineField({
       name: 'showScrollDown',
