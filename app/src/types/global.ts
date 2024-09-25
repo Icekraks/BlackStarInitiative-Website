@@ -57,6 +57,11 @@ export type Image = {
   hotspot?: SanityImageHotspot;
 };
 
+export type File = {
+  _type: "file";
+  asset: SanityReference<SanityImageAsset>;
+};
+
 export type IconProps = {
   className?: string;
   width?: string | number;

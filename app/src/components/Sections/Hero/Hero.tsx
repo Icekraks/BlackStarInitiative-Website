@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useRef } from "react";
 import type { ObjectHero } from "@app/types/schema";
-import { ResponsiveImage } from "@app/components/ResponsiveImage";
 import { ChevronsDown, Mouse } from "lucide-react";
 import { cn } from "@app/utils/utils";
+import {
+  SwiperCarousel,
+  SwiperSlide,
+  SwiperRef,
+} from "@app/components/Carousel/SwiperCarousel";
+import { HeroSlide } from "@app/components/Sections/Hero/HeroSlide";
 
 type HeroProps = ObjectHero & {
   sectionIndex: number;
@@ -12,28 +17,33 @@ type HeroProps = ObjectHero & {
 const Hero: React.FC<HeroProps> = ({
   title,
   subtitle,
-  image,
+  // image,
+  content,
   showScrollDown = false,
   homeHero = false,
 }) => {
   const splitTitle = title.split("#");
+  const carouselRef = useRef<SwiperRef>(null);
+  console.log(content);
 
   return (
     <>
       <div className="relative  h-[100dvh] max-h-[750px] lg:max-h-[1000px]">
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-center">
-          <div className="absolute inset-0">
-            {image && image.asset && (
-              <ResponsiveImage
-                className="w-full h-full object-cover"
-                src={image.asset.url}
-                alt={image.asset.altText}
-              />
-            )}
-            <div className="absolute inset-0 bg-black bg-opacity-50" />
-          </div>
-        </div>
-        <div className="px-4 flex w-full flex-col items-center justify-center gap-3 absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2">
+        {content && content.length > 1 ? (
+          <SwiperCarousel parentRef={carouselRef}>
+            {content.map((item, index) => {
+              return (
+                <SwiperSlide key={index} height="100dvh">
+                  <HeroSlide content={item} />
+                </SwiperSlide>
+              );
+            })}
+          </SwiperCarousel>
+        ) : content && content.length === 1 ? (
+          <HeroSlide content={content[0]} />
+        ) : null}
+
+        <div className="px-4 flex w-full flex-col items-center justify-center gap-3 absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
           <div className="flex flex-col">
             {homeHero ? (
               <h1 className="flex gap-1.5 md:gap-2 lg:gap-4 align-bottom">

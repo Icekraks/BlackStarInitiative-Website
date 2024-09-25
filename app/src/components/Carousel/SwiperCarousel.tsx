@@ -37,6 +37,8 @@ type SwiperCarouselProps = {
 type SwiperCarouselSlideProps = {
   children: React.ReactNode;
   autoHeight?: boolean;
+  height?: string;
+  maxHeight?: string;
 };
 
 export const SwiperCarousel: React.FC<SwiperCarouselProps> = ({
@@ -105,7 +107,7 @@ export const SwiperCarousel: React.FC<SwiperCarouselProps> = ({
 };
 
 export const SwiperSlide: React.FC<SwiperCarouselSlideProps> = (props) => {
-  const { children, autoHeight = false, ...rest } = props;
+  const { children, autoHeight = false, height = "100%", ...rest } = props;
 
   const ref = useRef<HTMLDivElement>(null);
 
@@ -113,7 +115,7 @@ export const SwiperSlide: React.FC<SwiperCarouselSlideProps> = (props) => {
     <swiper-slide
       ref={ref}
       style={{
-        height: autoHeight ? "auto" : "100%",
+        height: autoHeight ? "auto" : height,
       }}
       {...rest}
     >
