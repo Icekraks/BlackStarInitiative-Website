@@ -8,6 +8,7 @@ import {
   SwiperRef,
 } from "@app/components/Carousel/SwiperCarousel";
 import { HeroSlide } from "@app/components/Sections/Hero/HeroSlide";
+import { useMedia } from "@app/hooks/useMedia";
 
 type HeroProps = ObjectHero & {
   sectionIndex: number;
@@ -24,16 +25,17 @@ const Hero: React.FC<HeroProps> = ({
 }) => {
   const splitTitle = title.split("#");
   const carouselRef = useRef<SwiperRef>(null);
+  const { isLg } = useMedia();
   console.log(content);
 
   return (
     <>
-      <div className="relative  h-[100dvh] max-h-[750px] lg:max-h-[1000px]">
+      <div className="relative  h-[100dvh] max-h-[1000px]">
         {content && content.length > 1 ? (
-          <SwiperCarousel parentRef={carouselRef}>
+          <SwiperCarousel parentRef={carouselRef} autoplay loop>
             {content.map((item, index) => {
               return (
-                <SwiperSlide key={index} height="100dvh">
+                <SwiperSlide key={index} height="100dvh" maxHeight="1000px">
                   <HeroSlide content={item} />
                 </SwiperSlide>
               );

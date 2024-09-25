@@ -23,7 +23,7 @@ export const HeroSlide: React.FC<HeroSlideProps> = ({ content }) => {
           <video
             src={content.asset.url}
             className="w-full h-full object-cover"
-            autoPlay
+            controls
           />
         </div>
       )}

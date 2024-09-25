@@ -107,7 +107,13 @@ export const SwiperCarousel: React.FC<SwiperCarouselProps> = ({
 };
 
 export const SwiperSlide: React.FC<SwiperCarouselSlideProps> = (props) => {
-  const { children, autoHeight = false, height = "100%", ...rest } = props;
+  const {
+    children,
+    autoHeight = false,
+    height = "100%",
+    maxHeight = "",
+    ...rest
+  } = props;
 
   const ref = useRef<HTMLDivElement>(null);
 
@@ -116,6 +122,7 @@ export const SwiperSlide: React.FC<SwiperCarouselSlideProps> = (props) => {
       ref={ref}
       style={{
         height: autoHeight ? "auto" : height,
+        maxHeight: maxHeight,
       }}
       {...rest}
     >
