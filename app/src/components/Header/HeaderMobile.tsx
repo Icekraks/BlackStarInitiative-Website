@@ -19,6 +19,7 @@ export const HeaderMobile: React.FC<HeaderMobileProps> = ({
 }: HeaderMobileProps) => {
   const root = useRouteLoaderData("root") as RootLoaderData;
   const { urlResolver } = useLink();
+  const splitTitle = root.navigation.headerTitle.split("#");
 
   return (
     <>
@@ -41,8 +42,19 @@ export const HeaderMobile: React.FC<HeaderMobileProps> = ({
           <RemixLink to="/">
             <div className="flex items-center gap-2">
               <img className="w-[3rem] h-[3rem]" src="/icons/BSIIconN.svg" />
-              <h1 className="heading-1 text-bsi-red text-base">
-                {root.navigation.headerTitle || "Black Star Initiative"}
+              <h1 className="heading-1 text-bsi-red">
+                {splitTitle.map((titlePart, index) => (
+                  <span
+                    key={index}
+                    className={cn(
+                      index === 1
+                        ? "text-bsi-red heading-1 text-base"
+                        : "text-bsi-white heading-2 text-xl"
+                    )}
+                  >
+                    {titlePart}
+                  </span>
+                ))}
               </h1>
             </div>
           </RemixLink>

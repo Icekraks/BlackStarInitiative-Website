@@ -26,6 +26,12 @@ export default defineType({
       type: 'boolean',
       initialValue: true,
     }),
+    defineField({
+      name: 'homeHero',
+      title: 'Home Hero?',
+      type: 'boolean',
+      initialValue: false,
+    }),
   ],
   preview: {
     select: {

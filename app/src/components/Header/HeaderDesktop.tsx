@@ -16,6 +16,8 @@ export const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ isScrolled }) => {
   const root = useRouteLoaderData("root") as RootLoaderData;
   const { urlResolver } = useLink();
 
+  const splitTitle = root.navigation.headerTitle.split("#");
+
   return (
     <>
       <div
@@ -36,8 +38,19 @@ export const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ isScrolled }) => {
           <RemixLink to="/">
             <div className="flex items-center gap-2">
               <img className="w-[3rem] h-[3rem]" src="/icons/BSIIconN.svg" />
-              <h1 className="heading-1 text-bsi-red text-2xl">
-                {root.navigation.headerTitle || "Black Star Initiative"}
+              <h1>
+                {splitTitle.map((titlePart, index) => (
+                  <span
+                    key={index}
+                    className={cn(
+                      index === 1
+                        ? "text-bsi-red heading-1 text-2xl"
+                        : "text-bsi-white heading-2 text-3xl"
+                    )}
+                  >
+                    {titlePart}
+                  </span>
+                ))}
               </h1>
             </div>
           </RemixLink>

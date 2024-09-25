@@ -2,6 +2,7 @@ import React from "react";
 import type { ObjectHero } from "@app/types/schema";
 import { ResponsiveImage } from "@app/components/ResponsiveImage";
 import { ChevronsDown, Mouse } from "lucide-react";
+import { cn } from "@app/utils/utils";
 
 type HeroProps = ObjectHero & {
   sectionIndex: number;
@@ -13,7 +14,10 @@ const Hero: React.FC<HeroProps> = ({
   subtitle,
   image,
   showScrollDown = false,
+  homeHero = false,
 }) => {
+  const splitTitle = title.split("#");
+
   return (
     <>
       <div className="relative  h-[100dvh] max-h-[750px] lg:max-h-[1000px]">
@@ -31,10 +35,28 @@ const Hero: React.FC<HeroProps> = ({
         </div>
         <div className="px-4 flex w-full flex-col items-center justify-center gap-3 absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2">
           <div className="flex flex-col">
-            <h1 className="heading-1 text-2xl md:4xl lg:text-6xl text-bsi-red">
-              {title}
-            </h1>
-            <h4 className="heading-2 text-xl md:2xl lg:text-4xl text-bsi-white">
+            {homeHero ? (
+              <h1 className="flex gap-1.5 md:gap-2 lg:gap-4 align-bottom">
+                {splitTitle.map((titlePart, index) => (
+                  <span
+                    key={index}
+                    className={cn(
+                      index === 1
+                        ? "block text-bsi-red heading-1 text-xl md:text-3xl lg:text-4xl mt-0.5 md:mt-1.5 lg:mt-2"
+                        : "block text-bsi-white heading-2 text-3xl md:text-5xl lg:text-6xl leading-none"
+                    )}
+                  >
+                    {titlePart}
+                  </span>
+                ))}
+              </h1>
+            ) : (
+              <h1 className="heading-1 text-2xl md:text-4xl lg:text-6xl text-bsi-red">
+                {title}
+              </h1>
+            )}
+
+            <h4 className="heading-2 text-xl md:text-2xl lg:text-4xl text-bsi-white">
               {subtitle}
             </h4>
           </div>
@@ -46,7 +68,6 @@ const Hero: React.FC<HeroProps> = ({
               if (element) {
                 const header: HTMLDivElement | null =
                   document.querySelector("#headerElement");
-                console.log(header?.offsetHeight);
                 const headerOffset = header?.offsetHeight || 130;
                 const elementPosition =
                   element.getBoundingClientRect().top + window.scrollY;
