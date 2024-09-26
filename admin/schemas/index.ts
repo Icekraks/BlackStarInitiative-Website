@@ -6,18 +6,23 @@ import FlexibleLink from './Objects/flexibleLink'
 import BrandColours from './Objects/BrandColours'
 
 import objectSections from './Objects/objectSections'
-import objectHero from './Objects/Sections/objectHero'
-import objectText from './Objects/Sections/objectText'
-import objectTextColumns from './Objects/Sections/objectTextColumns'
+
+// Objects
 import featuredObject from './Objects/Sections/objectFeaturedObject'
 import objectContact from './Objects/Sections/objectContact'
 import carouselObject from './Objects/Sections/objectCarouselObject'
 import objectInternal from './Objects/InternalObject'
-
 import objectTextColumn from './Objects/objectTextColumn'
+
+// Sections
+import objectHero from './Objects/Sections/objectHero'
+import objectText from './Objects/Sections/objectText'
+import objectTextColumns from './Objects/Sections/objectTextColumns'
 import objectSocialSection from './Objects/Sections/objectSocialSection'
 import objectFeaturedBrands from './Objects/Sections/objectFeaturedBrands'
+import objectCTA from './Objects/Sections/objectCTA'
 
+// Settings
 import navigation from './Navigation'
 import settingsMenus from './Settings/SettingsMenus'
 import settingsSocial from './Settings/SettingsSocial'
@@ -46,6 +51,7 @@ const sections = [
   objectTextColumn,
   objectSocialSection,
   objectFeaturedBrands,
+  objectCTA,
 ]
 
 export const schemaTypes = [...pages, ...sections, ...settings, ...objects]

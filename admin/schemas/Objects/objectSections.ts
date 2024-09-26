@@ -25,6 +25,11 @@ export default defineType({
       title: 'Featured Brands',
       type: 'objectFeaturedBrands',
     },
+    {
+      title: 'Call To Action',
+      type: 'objectCTA',
+    },
+
     // {
     //   title: 'Tags',
     //   type: 'objectTags',

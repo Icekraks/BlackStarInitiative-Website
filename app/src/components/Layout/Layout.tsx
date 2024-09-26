@@ -1,5 +1,5 @@
 import { Header } from "@app/components/Header/Header";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import ReturnTop from "@app/components/ReturnTop";
 import Footer from "@app/components/Footer/Footer";
 

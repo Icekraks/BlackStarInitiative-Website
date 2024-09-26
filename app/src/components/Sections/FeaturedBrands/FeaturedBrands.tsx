@@ -14,7 +14,7 @@ const FeaturedBrands: React.FC<FeaturedBrandsProps> = ({
   sectionIndex,
 }) => {
   const backgroundColour = `var(--bsi-${background?.colour || "pure-black"})`;
-  console.log(backgroundColour);
+
   return (
     <div
       style={{ background: backgroundColour }}

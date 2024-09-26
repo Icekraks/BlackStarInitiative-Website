@@ -1,19 +1,7 @@
-import { LINK_FRAGMENT } from "./link";
+import { FLEXIBLE_LINK_FRAGMENT } from "./flexibleLink";
 
 export const NAVIGATION_FRAGMENT = `
   links[] {
-    type,
-    internal {
-      title,
-      document->{
-        _id,
-        slug {
-          current
-        }
-      }
-    },
-    external {
-      ${LINK_FRAGMENT}
-    }
+    ${FLEXIBLE_LINK_FRAGMENT}
   }
 `;

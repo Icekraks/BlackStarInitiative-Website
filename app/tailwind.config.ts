@@ -55,7 +55,7 @@ export default {
         borderAlt: "#fdf6e3",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--primary))",
+        background: "var(--bsi-black)",
         foreground: "hsl(var(--primary-foreground))",
         primary: {
           DEFAULT: "var(--bsi-black)",

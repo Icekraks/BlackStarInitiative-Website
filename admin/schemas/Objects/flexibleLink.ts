@@ -8,18 +8,20 @@ export default defineType({
     {
       name: 'external',
       type: 'link',
-      hidden: ({parent}: any) => !parent.type,
+      hidden: ({parent}: any) => !parent?.type,
     },
     {
       name: 'internal',
       type: 'internal',
-      hidden: ({parent}: any) => parent.type,
+      hidden: ({parent}: any) => parent?.type,
     },
     {
       name: 'type',
       title: 'External Link?',
       type: 'boolean',
       initialValue: false,
+      validation: (Rule) => Rule.required(),
+      codegen: {required: true},
     },
   ],
   preview: {
