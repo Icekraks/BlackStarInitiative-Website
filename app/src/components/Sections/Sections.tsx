@@ -2,9 +2,6 @@ import { SectionsTypes } from "@app/types/global";
 import { ObjectSections } from "@app/types/schema";
 import Hero from "@app/components/Sections/Hero/Hero";
 import Text from "@app/components/Sections/Text/Text";
-import Tags from "@app/components/Sections/Tags/Tags";
-import Featured from "@app/components/Sections/Featured/Featured";
-import FeaturedCarousel from "@app/components/Sections/FeaturedCarousel/FeaturedCarousel";
 import Contact from "@app/components/Sections/Contact/Contact";
 import { cn } from "@app/utils/utils";
 import TextColumns from "@app/components/Sections/TextColumns/TextColumns";
@@ -19,9 +16,6 @@ type Props = {
 const sectionsComponents: any = {
   Hero,
   Text,
-  Tags,
-  Featured,
-  FeaturedCarousel,
   Contact,
   TextColumns,
   SocialSection,

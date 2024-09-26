@@ -9,6 +9,9 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: (Rule) => Rule.required(),
+      codegen: {required: true},
+      description: 'Use a pair # to colour the text red.',
     }),
     defineField({
       name: 'background',

@@ -1,6 +1,7 @@
 import { Button } from "@app/theme/ui/button";
 import { ObjectText } from "@app/types/schema";
 import { cn } from "@app/utils/utils";
+import { SectionHeading } from "@app/components/SectionHeading";
 import { useState } from "react";
 
 export type TextProps = ObjectText & {
@@ -13,8 +14,6 @@ const Text: React.FC<TextProps> = ({
   background,
   sectionIndex,
 }) => {
-  const splitTitle = title.split("#");
-
   const [readMore, setReadMore] = useState(false);
   const toggleExpand = () => {
     setReadMore(!readMore);
@@ -31,47 +30,11 @@ const Text: React.FC<TextProps> = ({
       )}
     >
       <div className="flex flex-col w-full items-center max-w-screen-2xl mx-auto">
-        {sectionIndex === 0 ? (
-          <h1 className="heading-2 text-bsi-white text-2xl lg:text-4xl font-bold mb-5 lg:mb-10 w-full text-center">
-            {splitTitle.map((titlePart, index) => (
-              <span
-                key={index}
-                className={cn(
-                  "heading-2 text-2xl lg:text-4xl font-bold mb-4 w-full",
-                  index === 1
-                    ? background?.colour === "red"
-                      ? "text-bsi-black"
-                      : "text-bsi-red"
-                    : background?.colour === "white" ||
-                      background?.colour === "pure-white"
-                    ? "text-bsi-black"
-                    : "text-bsi-white"
-                )}
-              >
-                {titlePart}
-              </span>
-            ))}
-          </h1>
-        ) : (
-          <h2 className="heading-2 text-bsi-white text-2xl lg:text-4xl font-bold mb-5 lg:mb-10 w-full text-center">
-            {splitTitle.map((titlePart, index) => (
-              <span
-                key={index}
-                className={cn(
-                  "heading-2 text-2xl lg:text-4xl font-bold mb-4 w-full",
-                  index === 1
-                    ? "text-bsi-red"
-                    : background?.colour === "white" ||
-                      background?.colour === "pure-white"
-                    ? "text-bsi-black"
-                    : "text-bsi-white"
-                )}
-              >
-                {titlePart}
-              </span>
-            ))}
-          </h2>
-        )}
+        <SectionHeading
+          sectionIndex={sectionIndex}
+          title={title}
+          backgroundColour={background?.colour || "black"}
+        />
         <div className="flex flex-col">
           {description && (
             <p className="text-bsi-white px-4 md:px-10 lg:px-16 w-full">

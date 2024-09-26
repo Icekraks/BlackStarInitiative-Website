@@ -24,13 +24,13 @@ export const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ isScrolled }) => {
       >
         <div
           className={cn(
-            "border-bsi-white px-8",
+            "border-bsi-white",
             root.navigation.header &&
               root.navigation.header.links &&
               "border-b-[1px] pb-4"
           )}
         >
-          <div className="lg:flex items-center justify-between gap-2 lg:gap-8 max-w-screen-2xl mx-auto">
+          <div className="lg:flex items-center justify-between gap-2 lg:gap-8 max-w-screen-2xl mx-auto px-8">
             <Logo />
 
             {root.social.discord && (
@@ -55,7 +55,7 @@ export const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ isScrolled }) => {
         </div>
 
         {root.navigation.header && root.navigation.header.links && (
-          <nav className="flex gap-4 pt-1 px-8">
+          <nav className="flex gap-4 pt-1 px-8 max-w-screen-2xl mx-auto">
             {root.navigation.header.links.map((link, index) => {
               const builtLink = urlResolver(link);
               return (
