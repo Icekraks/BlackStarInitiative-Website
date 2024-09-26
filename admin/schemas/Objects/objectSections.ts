@@ -29,19 +29,6 @@ export default defineType({
       title: 'Call To Action',
       type: 'objectCTA',
     },
-
-    // {
-    //   title: 'Tags',
-    //   type: 'objectTags',
-    // },
-    // {
-    //   title: 'Featured Sites',
-    //   type: 'objectFeatured',
-    // },
-    // {
-    //   title: 'Featured Carousel',
-    //   type: 'objectFeaturedCarousel',
-    // },
     // {
     //   title: 'Contact Section',
     //   type: 'objectContact',

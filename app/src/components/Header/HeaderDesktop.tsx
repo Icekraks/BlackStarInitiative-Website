@@ -56,6 +56,11 @@ export const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ isScrolled }) => {
 
         {root.navigation.header && root.navigation.header.links && (
           <nav className="flex gap-4 pt-1 px-8 max-w-screen-2xl mx-auto">
+            <Button asChild variant="link">
+              <RemixLink to="/" rel="noreferrer">
+                Home
+              </RemixLink>
+            </Button>
             {root.navigation.header.links.map((link, index) => {
               const builtLink = urlResolver(link);
               return (

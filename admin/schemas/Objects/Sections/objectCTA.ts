@@ -29,6 +29,12 @@ export default defineType({
       type: 'flexibleLink',
     }),
     defineField({
+      name: 'leftImage',
+      title: 'Image on Left?',
+      type: 'boolean',
+      initialValue: true,
+    }),
+    defineField({
       name: 'background',
       title: 'Background',
       type: 'brandColours',

@@ -23,13 +23,22 @@ const Footer: React.FC<React.PropsWithChildren> = () => {
 
           <div className="flex flex-col-reverse gap-4 lg:gap-0 w-full lg:flex-row lg:w-2/3">
             {navigation.footer && navigation.footer.links && (
-              <nav className="flex flex-col items-start lg:flex-row -ml-2 lg:ml-0 lg:-mt-2">
+              <nav className="flex flex-col items-start lg:grid lg:grid-cols-2 2xl:flex 2xl:flex-row -ml-2 lg:ml-0 lg:-mt-2">
+                <Button
+                  className="underline justify-start"
+                  asChild
+                  variant="link"
+                >
+                  <RemixLink to="/" rel="noreferrer">
+                    Home
+                  </RemixLink>
+                </Button>
                 {navigation.footer.links.map((link, index) => {
                   const builtLink = urlResolver(link);
                   return (
                     <Button
                       key={index}
-                      className="underline"
+                      className="underline justify-start"
                       asChild
                       variant="link"
                     >

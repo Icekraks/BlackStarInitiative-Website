@@ -1,42 +1,25 @@
 import React from "react";
 import { Link as RemixLink, useRouteLoaderData } from "@remix-run/react";
-import { LogoProps, RootLoaderData } from "@app/types/global";
+import { RootLoaderData, LogoProps } from "@app/types/global";
 import { cn } from "@app/utils/utils";
 
-export const Logo: React.FC<LogoProps> = ({ stacked = false }) => {
+export const LogoMobile: React.FC<LogoProps> = () => {
   const root = useRouteLoaderData("root") as RootLoaderData;
   const splitTitle = root.navigation.headerTitle.split("#");
   return (
     <RemixLink to="/">
       <div className="flex items-center gap-2">
-        <img
-          className={cn(
-            "w-[3rem] h-[3rem]",
-            stacked ? "md:w-[6rem] md:h-[6rem]" : ""
-          )}
-          src="/icons/BSIIconN.svg"
-        />
-        <h1
-          className={cn(
-            "flex flex-col items-start",
-            stacked ? "md:flex-col" : "md:flex-row md:items-center md:gap-3"
-          )}
-        >
+        <img className="w-[3rem] h-[3rem]" src="/icons/BSIIconN.svg" />
+        <h1 className={cn("flex flex-col items-start")}>
           {splitTitle.map((titlePart, index) => {
             if (index === 1) {
               const letterArray = titlePart.split("");
               return (
-                <div
-                  key={index}
-                  className={cn(
-                    "flex gap-[0.475rem] md:gap-[0.7rem] ml-0.5",
-                    stacked ? "md:mt-0" : "md:mt-1"
-                  )}
-                >
+                <div key={index} className={cn("flex gap-[0.475rem] ml-0.5")}>
                   {letterArray.map((letter, index) => (
                     <span
                       key={index}
-                      className="uppercase text-bsi-red heading-1 text-base md:text-2xl "
+                      className="uppercase text-bsi-red heading-1 text-base"
                     >
                       {letter}
                     </span>
@@ -47,7 +30,7 @@ export const Logo: React.FC<LogoProps> = ({ stacked = false }) => {
               return (
                 <span
                   key={index}
-                  className="uppercase text-bsi-white heading-2 text-xl md:text-3xl mr-auto md:mr-none"
+                  className="uppercase text-bsi-white heading-2 text-xl mr-auto"
                 >
                   {titlePart}
                 </span>

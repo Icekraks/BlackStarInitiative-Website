@@ -69,6 +69,10 @@ export type IconProps = {
   fill?: string;
 };
 
+export type LogoProps = {
+  stacked?: boolean;
+};
+
 export type ExtractType<T> = T extends Array<infer U> ? U : never;
 
 export type SectionsTypes = ExtractType<ObjectSections>;

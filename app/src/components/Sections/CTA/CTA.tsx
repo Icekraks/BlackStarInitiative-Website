@@ -8,17 +8,19 @@ import { ResponsiveImage } from "@app/components/ResponsiveImage";
 import useLink from "@app/hooks/useLink";
 import { Link } from "@remix-run/react";
 
-export type TextProps = ObjectCTA & {
+export type CTAProps = ObjectCTA & {
   sectionIndex: number;
 };
 
-const CTA: React.FC<TextProps> = ({
+//CTA Section
+const CTA: React.FC<CTAProps> = ({
   title,
   description,
   image,
   background,
   callToAction,
   sectionIndex,
+  leftImage,
 }) => {
   const { urlResolver } = useLink();
   const [readMore, setReadMore] = useState(false);
@@ -32,7 +34,12 @@ const CTA: React.FC<TextProps> = ({
 
   return (
     <div style={{ background: backgroundColour }} className="relative">
-      <div className="flex flex-col lg:flex-row w-full items-start mx-auto">
+      <div
+        className={cn(
+          "flex flex-col w-full items-start mx-auto",
+          leftImage ? "lg:flex-row" : "lg:flex-row-reverse"
+        )}
+      >
         <div className="relative w-full lg:w-1/2 pb-[min(60%,720px)]">
           <div className="absolute inset-0">
             {image ? (
