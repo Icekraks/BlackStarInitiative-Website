@@ -25,7 +25,7 @@ const FeaturedCarousel: React.FC<FeaturedCarouselProps> = ({
 
   return (
     <div className="relative my-12 lg:my-16 2xl:my-24 lg:px-16 h-[100dvh] max-h-[750px] lg:max-h-[1000px]">
-      <div className="max-w-[1440px] mx-auto">
+      <div className="max-w-screen-2xl mx-auto">
         {title && (
           <h2 className="text-primary text-2xl md:text-4xl font-bold mb-4">
             {title}

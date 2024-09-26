@@ -16,7 +16,7 @@ const Tags: React.FC<TagsProps> = ({ title, categories, sectionIndex }) => {
         sectionIndex !== 0 ? "mt-12 lg:mt-16 2xl:mt-24" : ""
       )}
     >
-      <div className="max-w-[1440px] mx-auto mb-8">
+      <div className="max-w-screen-2xl mx-auto mb-8">
         {sectionIndex === 0 ? (
           <h1 className="text-primary text-4xl lg:text-6xl font-bold mb-8 w-full">
             {title}

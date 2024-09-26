@@ -2,6 +2,7 @@ import { Button } from "@app/theme/ui/button";
 import type { LinkObject, RootLoaderData } from "@app/types/global";
 import { Link as RemixLink, useRouteLoaderData } from "@remix-run/react";
 import { HeaderFooter } from "@app/components/Header/HeaderFooter";
+import { Logo } from "@app/components/Logo";
 import { cn } from "@app/utils/utils";
 import { Menu, X } from "lucide-react";
 import useLink from "@app/hooks/useLink";
@@ -39,25 +40,7 @@ export const HeaderMobile: React.FC<HeaderMobileProps> = ({
           <Menu />
         </Button>
         <div className="flex ml-auto mr-auto justify-center">
-          <RemixLink to="/">
-            <div className="flex items-center gap-2">
-              <img className="w-[3rem] h-[3rem]" src="/icons/BSIIconN.svg" />
-              <h1 className="heading-1 text-bsi-red">
-                {splitTitle.map((titlePart, index) => (
-                  <span
-                    key={index}
-                    className={cn(
-                      index === 1
-                        ? "text-bsi-red heading-1 text-base"
-                        : "text-bsi-white heading-2 text-xl"
-                    )}
-                  >
-                    {titlePart}
-                  </span>
-                ))}
-              </h1>
-            </div>
-          </RemixLink>
+          <Logo />
         </div>
       </div>
       <div
@@ -112,10 +95,6 @@ export const HeaderMobile: React.FC<HeaderMobileProps> = ({
               <HeaderFooter social={root.social} />
             </div>
           </div>
-
-          {/* <div className="flex items-center justify-center">
-            <h4 className="text-secondary text-md lg:text-xl">{`${new Date().getFullYear()} © Felix Hu`}</h4>
-          </div> */}
         </div>
       </div>
     </>

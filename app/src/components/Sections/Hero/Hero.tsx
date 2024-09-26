@@ -8,7 +8,6 @@ import {
   SwiperRef,
 } from "@app/components/Carousel/SwiperCarousel";
 import { HeroSlide } from "@app/components/Sections/Hero/HeroSlide";
-import { useMedia } from "@app/hooks/useMedia";
 
 type HeroProps = ObjectHero & {
   sectionIndex: number;
@@ -18,21 +17,25 @@ type HeroProps = ObjectHero & {
 const Hero: React.FC<HeroProps> = ({
   title,
   subtitle,
-  // image,
   content,
   showScrollDown = false,
   homeHero = false,
 }) => {
   const splitTitle = title.split("#");
   const carouselRef = useRef<SwiperRef>(null);
-  const { isLg } = useMedia();
-  console.log(content);
 
   return (
     <>
       <div className="relative  h-[100dvh] max-h-[1000px]">
         {content && content.length > 1 ? (
-          <SwiperCarousel parentRef={carouselRef} autoplay loop>
+          <SwiperCarousel
+            parentRef={carouselRef}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+            }}
+            loop
+          >
             {content.map((item, index) => {
               return (
                 <SwiperSlide key={index} height="100dvh" maxHeight="1000px">
@@ -48,19 +51,36 @@ const Hero: React.FC<HeroProps> = ({
         <div className="px-4 flex w-full flex-col items-center justify-center gap-3 absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
           <div className="flex flex-col">
             {homeHero ? (
-              <h1 className="flex gap-1.5 md:gap-2 lg:gap-4 align-bottom">
-                {splitTitle.map((titlePart, index) => (
-                  <span
-                    key={index}
-                    className={cn(
-                      index === 1
-                        ? "block text-bsi-red heading-1 text-xl md:text-3xl lg:text-4xl mt-0.5 md:mt-1.5 lg:mt-2"
-                        : "block text-bsi-white heading-2 text-3xl md:text-5xl lg:text-6xl leading-none"
-                    )}
-                  >
-                    {titlePart}
-                  </span>
-                ))}
+              <h1 className="flex md:gap-5 flex-col items-start md:flex-row md:items-center mb-1">
+                {splitTitle.map((titlePart, index) => {
+                  if (index === 1) {
+                    const letterArray = titlePart.split("");
+                    return (
+                      <div
+                        key={index}
+                        className="flex gap-3 md:gap-4 ml-0.5 md:mt-1"
+                      >
+                        {letterArray.map((letter, index) => (
+                          <span
+                            key={index}
+                            className="uppercase text-bsi-red heading-1 text-1.5xl md:text-3.5xl lg:text-4.5xl"
+                          >
+                            {letter}
+                          </span>
+                        ))}
+                      </div>
+                    );
+                  } else {
+                    return (
+                      <span
+                        key={index}
+                        className="uppercase text-bsi-white heading-2 text-3xl md:text-5xl lg:text-6xl mr-auto md:mr-none"
+                      >
+                        {titlePart}
+                      </span>
+                    );
+                  }
+                })}
               </h1>
             ) : (
               <h1 className="heading-1 text-2xl md:text-4xl lg:text-6xl text-bsi-red">

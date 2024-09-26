@@ -1,6 +1,7 @@
 import React from "react";
 import type { File, Image } from "@app/types/global";
 import { ResponsiveImage } from "@app/components/ResponsiveImage";
+import { ResponsiveVideo } from "@app/components/ResponsiveVideo";
 
 type HeroSlideProps = {
   content: File | Image;
@@ -20,10 +21,9 @@ export const HeroSlide: React.FC<HeroSlideProps> = ({ content }) => {
       )}
       {content._type === "file" && (
         <div className="absolute inset-0">
-          <video
+          <ResponsiveVideo
             src={content.asset.url}
             className="w-full h-full object-cover"
-            controls
           />
         </div>
       )}

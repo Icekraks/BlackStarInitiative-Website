@@ -40,7 +40,7 @@ const Contact: React.FC<ContactProps> = ({
         sectionIndex !== 0 ? "mt-12 lg:mt-16 2xl:mt-24" : ""
       )}
     >
-      <div className="flex flex-col md:flex-row w-full items-center max-w-[1440px] mx-auto">
+      <div className="flex flex-col md:flex-row w-full items-center max-w-screen-2xl mx-auto">
         <div>
           <h1 className="text-primary text-[2rem] lg:text-[5.5rem] xl:text-[8rem] font-bold mb-8 w-full">
             {currentGreeting()}

@@ -20,7 +20,7 @@ const Featured: React.FC<FeaturedProps> = ({
         sectionIndex !== 0 ? "mt-12 lg:mt-16 2xl:mt-24" : ""
       )}
     >
-      <div className="max-w-[1440px] mx-auto">
+      <div className="max-w-screen-2xl mx-auto">
         <h2 className="text-primary text-2xl lg:text-4xl font-bold mb-4">
           {title}
         </h2>

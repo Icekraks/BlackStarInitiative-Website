@@ -10,6 +10,7 @@ export const HERO_SECTION_FRAGMENT = `
     _type == 'image' => {${IMAGE_FRAGMENT}},
     _type == 'file' => {${VIDEO_FRAGMENT}}
   },
+  autoplay,
   showScrollDown,
   homeHero,
 `;

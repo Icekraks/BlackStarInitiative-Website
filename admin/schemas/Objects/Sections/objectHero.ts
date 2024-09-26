@@ -25,6 +25,13 @@ export default defineType({
       ],
     }),
     defineField({
+      name: 'autoplay',
+      title: 'Autoplay Delay',
+      type: 'number',
+      description: 'Delay in milliseconds',
+      initialValue: 5000,
+    }),
+    defineField({
       name: 'showScrollDown',
       title: 'Show Scroll Down',
       type: 'boolean',

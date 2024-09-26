@@ -30,7 +30,7 @@ const Text: React.FC<TextProps> = ({
         sectionIndex !== 0 ? "pt-12 lg:pt-16 2xl:pt-24" : ""
       )}
     >
-      <div className="flex flex-col w-full items-center max-w-[1440px] mx-auto">
+      <div className="flex flex-col w-full items-center max-w-screen-2xl mx-auto">
         {sectionIndex === 0 ? (
           <h1 className="heading-2 text-bsi-white text-2xl lg:text-4xl font-bold mb-5 lg:mb-10 w-full text-center">
             {splitTitle.map((titlePart, index) => (
