@@ -31,7 +31,7 @@ const TextColumns: React.FC<TextColumnProps> = ({
           {columns?.map((column, index) => {
             const splitColumnTitle = column.title.split("#");
             return (
-              <div key={index}>
+              <div className="px-4 md:px-0" key={index}>
                 <h3 className="heading-2 text-bsi-red text-xl lg:text-2xl font-bold mb-4 w-full">
                   {splitColumnTitle.map((titlePart, index) => (
                     <span

@@ -34,6 +34,7 @@ const Text: React.FC<TextProps> = ({
           sectionIndex={sectionIndex}
           title={title}
           backgroundColour={background?.colour || "black"}
+          className="md:px-10 lg:px-16"
         />
         <div className="flex flex-col">
           {description && (

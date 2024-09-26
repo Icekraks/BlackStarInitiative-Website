@@ -63,7 +63,7 @@ const CTA: React.FC<CTAProps> = ({
             sectionIndex={sectionIndex}
             title={title}
             backgroundColour={background?.colour || "black"}
-            className="px-4 md:px-10 lg:px-16"
+            className="md:px-10 lg:px-16"
           />
           <div className="flex flex-col mb-4 lg:mb-12">
             {description && (
