@@ -13,6 +13,7 @@ import objectContact from './Objects/Sections/objectContact'
 import carouselObject from './Objects/Sections/objectCarouselObject'
 import objectInternal from './Objects/InternalObject'
 import objectTextColumn from './Objects/objectTextColumn'
+import objectContent from './Objects/objectContent'
 
 // Sections
 import objectHero from './Objects/Sections/objectHero'
@@ -50,6 +51,7 @@ const objects = [
   objectInternal,
   FlexibleLink,
   BrandColours,
+  objectContent,
 ]
 
 const sections = [

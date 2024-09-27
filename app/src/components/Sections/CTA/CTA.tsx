@@ -75,7 +75,6 @@ const CTA: React.FC<CTAProps> = ({
                         .split(" ")
                         .slice(0, 20)
                         .join(" ")}...`}{" "}
-                  {/* Set word limit to 50 */}
                 </span>
 
                 <span className="hidden md:block">{description}</span>
