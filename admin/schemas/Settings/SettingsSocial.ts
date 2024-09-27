@@ -51,29 +51,10 @@ export default defineType({
       ],
     }),
     defineField({
-      name: 'twitter',
-      title: 'Twitter',
-      type: 'string',
-      initialValue: 'https://x.com/BSI_SC',
-    }),
-    defineField({
-      name: 'patreon',
-      title: 'Patreon',
-      type: 'string',
-      initialValue: 'https://www.patreon.com/bsi',
-    }),
-    defineField({
       name: 'discord',
-      title: 'Discord',
+      title: 'Discord Join Button URL',
       type: 'string',
       initialValue: 'https://discord.com/invite/hM47S3q',
-    }),
-
-    defineField({
-      name: 'youtube',
-      title: 'YouTube',
-      type: 'string',
-      initialValue: 'https://www.youtube.com/channel/UCMHZsqaouoPa-Udzbj_2b9Q',
     }),
   ],
 })

@@ -7,6 +7,7 @@ import {
   SanityReference,
   SettingsFooter,
   SettingsMaintenance,
+  SettingsSocial,
 } from "@app/types/schema";
 
 export type RootLoaderData = {
@@ -15,7 +16,7 @@ export type RootLoaderData = {
     header: Navigation;
     footer: Navigation;
   };
-  social: SocialMedia;
+  social: SettingsSocial;
   notFound: NotFound;
   footer: SettingsFooter;
   maintenance: SettingsMaintenance;
@@ -25,13 +26,6 @@ export type RootLoaderData = {
 export type NotFound = {
   title: string;
   description: string;
-};
-
-export type SocialMedia = {
-  twitter: string;
-  patreon: string;
-  discord: string;
-  youtube: string;
 };
 
 export type Navigation = {

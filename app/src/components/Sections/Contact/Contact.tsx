@@ -66,20 +66,7 @@ const Contact: React.FC<ContactProps> = ({
             )}
             <div className="flex items-center">
               <span className="text-primary pr-1 font-bold">Socials:</span>
-              {social.linkedin && (
-                <Button className="px-0 mr-1" variant="link" size="sm" asChild>
-                  <Link to={social.linkedin} target="_blank" rel="noreferrer">
-                    LinkedIn
-                  </Link>
-                </Button>
-              )}
-              {social.github && (
-                <Button className="px-0 mr-1" variant="link" size="sm" asChild>
-                  <Link to={social.github} target="_blank" rel="noreferrer">
-                    Github
-                  </Link>
-                </Button>
-              )}
+
               {social.youtube && (
                 <Button className="px-0" variant="link" size="sm" asChild>
                   <Link to={social.youtube} target="_blank" rel="noreferrer">

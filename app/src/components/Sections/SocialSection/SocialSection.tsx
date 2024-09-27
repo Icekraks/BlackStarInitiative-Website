@@ -8,6 +8,10 @@ import { DiscordIcon } from "@app/components/Icons/Discord";
 import { YoutubeIcon } from "@app/components/Icons/Youtube";
 import { PatreonIcon } from "@app/components/Icons/Patreon";
 import { TwitterIcon } from "@app/components/Icons/Twitter";
+import { FacebookIcon } from "@app/components/Icons/Facebook";
+import { InstagramIcon } from "@app/components/Icons/Instagram";
+import { TiktokIcon } from "@app/components/Icons/Tiktok";
+
 import { SectionHeading } from "@app/components/SectionHeading";
 
 export type SocialSectionProps = ObjectSocialSection & {
@@ -20,6 +24,8 @@ const SocialSection: React.FC<SocialSectionProps> = ({
   sectionIndex,
 }) => {
   const root = useRouteLoaderData("root") as RootLoaderData;
+
+  const social = root.social;
 
   const keys = Object.keys(root.social) as Array<keyof typeof SocialIcons>;
 
@@ -68,7 +74,7 @@ const SocialSection: React.FC<SocialSectionProps> = ({
         />
 
         <div className="flex gap-4">
-          {keys.map((key, index) => {
+          {social?.socialMedia?.map((socialMedia, index) => {
             return (
               <Button
                 key={index}
@@ -77,8 +83,28 @@ const SocialSection: React.FC<SocialSectionProps> = ({
                 size="iconLarge"
                 className="rounded-full"
               >
-                <Link to={root.social?.[key]} target="_blank">
-                  {SocialIcons[key as keyof typeof SocialIcons]}
+                <Link to={socialMedia.url} target="_blank">
+                  {socialMedia.name === "facebook" && (
+                    <FacebookIcon className="w-[1.25rem] lg:w-[3rem] h-[1.25rem] lg:h-[3rem] fill-[currentColor]" />
+                  )}
+                  {socialMedia.name === "twitter" && (
+                    <TwitterIcon className="w-[1.25rem] lg:w-[3rem] h-[1.25rem] lg:h-[3rem] fill-[currentColor]" />
+                  )}
+                  {socialMedia.name === "instagram" && (
+                    <InstagramIcon className="w-[1.25rem] lg:w-[3rem] h-[1.25rem] lg:h-[3rem] fill-[currentColor]" />
+                  )}
+                  {socialMedia.name === "youtube" && (
+                    <YoutubeIcon className="w-[1.25rem] lg:w-[3rem] h-[1.25rem] lg:h-[3rem] fill-[currentColor]" />
+                  )}
+                  {socialMedia.name === "patreon" && (
+                    <PatreonIcon className="w-[1.25rem] lg:w-[3rem] h-[1.25rem] lg:h-[3rem] fill-[currentColor]" />
+                  )}
+                  {socialMedia.name === "discord" && (
+                    <DiscordIcon className="w-[1.25rem] lg:w-[3rem] h-[1.25rem] lg:h-[3rem] fill-[currentColor]" />
+                  )}
+                  {socialMedia.name === "tiktok" && (
+                    <TiktokIcon className="w-[1.25rem] lg:w-[3rem] h-[1.25rem] lg:h-[3rem] fill-[currentColor]" />
+                  )}
                 </Link>
               </Button>
             );
