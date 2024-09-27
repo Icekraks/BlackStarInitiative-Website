@@ -55,8 +55,8 @@ const SocialSection: React.FC<SocialSectionProps> = ({
   return (
     <div
       className={cn(
-        "relative pb-12 lg:pb-16 2xl:pb-24 px-4 md:px-16",
-        sectionIndex !== 0 ? "pt-12 lg:pt-16 2xl:pt-24" : "",
+        "relative pb-12 lg:pb-16 2xl:pb-20 px-4 md:px-16",
+        sectionIndex !== 0 ? "pt-12 lg:pt-16 2xl:pt-20" : "",
         backgroundColour
       )}
     >

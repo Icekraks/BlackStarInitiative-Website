@@ -28,10 +28,18 @@ import settingsMenus from './Settings/SettingsMenus'
 import settingsSocial from './Settings/SettingsSocial'
 import settingsNotFound from './Settings/SettingsNotFound'
 import settingsFooter from './Settings/SettingsFooter'
+import settingsMaintenance from './Settings/SettingsMaintenance'
 
 const pages = [page, home]
 
-const settings = [navigation, settingsMenus, settingsSocial, settingsNotFound, settingsFooter]
+const settings = [
+  navigation,
+  settingsMenus,
+  settingsSocial,
+  settingsNotFound,
+  settingsFooter,
+  settingsMaintenance,
+]
 
 const objects = [
   featuredObject,

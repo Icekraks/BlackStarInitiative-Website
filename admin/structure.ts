@@ -39,7 +39,6 @@ export const structure = (S) => {
                     .schemaType('settingsSocial')
                     .documentId('settingsSocial'),
                 ),
-
               S.listItem()
                 .title('404 Settings')
                 .child(
@@ -47,6 +46,14 @@ export const structure = (S) => {
                     .title('404 Settings')
                     .schemaType('settingsNotFound')
                     .documentId('settingsNotFound'),
+                ),
+              S.listItem()
+                .title('Maintenance Settings')
+                .child(
+                  S.document()
+                    .title('Maintenance Settings')
+                    .schemaType('settingsMaintenance')
+                    .documentId('settingsMaintenance'),
                 ),
             ]),
         ),

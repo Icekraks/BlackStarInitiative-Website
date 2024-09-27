@@ -21,7 +21,6 @@ export const HeaderMobile: React.FC<HeaderMobileProps> = ({
 }: HeaderMobileProps) => {
   const root = useRouteLoaderData("root") as RootLoaderData;
   const { urlResolver } = useLink();
-  const splitTitle = root.navigation.headerTitle.split("#");
 
   return (
     <>

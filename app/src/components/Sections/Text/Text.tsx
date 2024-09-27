@@ -25,8 +25,8 @@ const Text: React.FC<TextProps> = ({
     <div
       style={{ background: backgroundColour }}
       className={cn(
-        "relative pb-12 lg:pb-16 2xl:pb-24 px-4 md:px-16",
-        sectionIndex !== 0 ? "pt-12 lg:pt-16 2xl:pt-24" : ""
+        "relative pb-12 lg:pb-16 2xl:pb-20 px-4 md:px-16",
+        sectionIndex !== 0 ? "pt-12 lg:pt-16 2xl:pt-20" : ""
       )}
     >
       <div className="flex flex-col w-full items-center max-w-screen-2xl mx-auto">

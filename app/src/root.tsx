@@ -8,7 +8,9 @@ import {
   Scripts,
   ScrollRestoration,
   defer,
+  redirect,
 } from "@remix-run/react";
+import { commitSession, getSession } from "@app/helpers/session.server";
 import { SanityClient } from "@root/server";
 import { ROOT_QUERY } from "@app/graphql/queries/root";
 import { Layout } from "@app/components/Layout/Layout";
@@ -61,10 +63,32 @@ export const ErrorBoundary = () => {
 
 export default App;
 
-export async function loader() {
+export async function loader({ request }: LoaderFunctionArgs) {
+  const session = await getSession(request.headers.get("Cookie"));
+  const cookieMaintainance = await session.get("maintainanceMode");
   const response = await SanityClient.fetch(ROOT_QUERY);
 
-  return defer({
-    ...response,
-  });
+  const pathname = new URL(request.url).pathname;
+  const url = request.url;
+
+  const passwordEnabled =
+    !pathname.includes("/api/") &&
+    response?.maintenance?.maintenanceMode &&
+    cookieMaintainance !== "true";
+
+  if (passwordEnabled && !url.includes("/password")) {
+    return redirect(`/password?continue=${pathname}`);
+  }
+
+  return defer(
+    {
+      ...response,
+      passwordEnabled,
+    },
+    {
+      headers: {
+        "Set-Cookie": await commitSession(session),
+      },
+    }
+  );
 }

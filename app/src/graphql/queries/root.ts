@@ -1,4 +1,5 @@
 import { HEADER_FRAGMENT } from "../fragments/header";
+import { PASSWORD_PAGE_QUERY } from "./password";
 
 export const ROOT_QUERY = `
   {
@@ -17,6 +18,7 @@ export const ROOT_QUERY = `
     },
     "footer": *[_type == "settingsFooter"][0] {
       disclaimer
-    }
+    },
+    "maintenance": ${PASSWORD_PAGE_QUERY}
   }
 `;

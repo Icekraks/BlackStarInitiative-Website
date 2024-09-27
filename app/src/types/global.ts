@@ -6,7 +6,8 @@ import {
   SanityImageHotspot,
   SanityReference,
   SettingsFooter,
-} from "./schema";
+  SettingsMaintenance,
+} from "@app/types/schema";
 
 export type RootLoaderData = {
   navigation: {
@@ -16,15 +17,15 @@ export type RootLoaderData = {
   };
   social: SocialMedia;
   notFound: NotFound;
-  footer: Footer;
+  footer: SettingsFooter;
+  maintenance: SettingsMaintenance;
+  passwordEnabled: boolean;
 };
 
 export type NotFound = {
   title: string;
   description: string;
 };
-
-export type Footer = SettingsFooter & {};
 
 export type SocialMedia = {
   twitter: string;

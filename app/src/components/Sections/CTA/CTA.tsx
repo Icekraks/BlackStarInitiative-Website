@@ -55,8 +55,8 @@ const CTA: React.FC<CTAProps> = ({
         </div>
         <div
           className={cn(
-            "w-full lg:w-1/2 max-w-[720px] px-4 pb-12 lg:pb-16 2xl:pb-24",
-            sectionIndex !== 0 ? "pt-12 lg:pt-16 2xl:pt-24" : ""
+            "w-full lg:w-1/2 max-w-[720px] px-4 pb-12 lg:pb-16 2xl:pb-20",
+            sectionIndex !== 0 ? "pt-12 lg:pt-16 2xl:pt-20" : ""
           )}
         >
           <SectionHeading
