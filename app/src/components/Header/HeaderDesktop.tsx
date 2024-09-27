@@ -31,7 +31,9 @@ export const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ isScrolled }) => {
           )}
         >
           <div className="lg:flex items-center justify-between gap-2 lg:gap-8 max-w-screen-2xl mx-auto px-8">
-            <Logo />
+            <RemixLink to="/">
+              <Logo />
+            </RemixLink>
 
             {root.social.discord && (
               <div className="flex gap-1 items-center">

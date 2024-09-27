@@ -40,7 +40,9 @@ export const HeaderMobile: React.FC<HeaderMobileProps> = ({
           <Menu />
         </Button>
         <div className="flex ml-auto mr-auto justify-center">
-          <Logo />
+          <RemixLink to="/">
+            <Logo />
+          </RemixLink>
         </div>
       </div>
       <div
@@ -58,7 +60,9 @@ export const HeaderMobile: React.FC<HeaderMobileProps> = ({
       >
         <div className="relative h-full flex flex-col">
           <div className="header flex mb-2">
-            <LogoMobile />
+            <RemixLink to="/">
+              <LogoMobile />
+            </RemixLink>
             <Button className="ml-[auto]" onClick={() => setIsOpen(false)}>
               <X />
             </Button>

@@ -3,9 +3,11 @@ import React, { useEffect, useState } from "react";
 import { useMedia } from "@app/hooks/useMedia";
 import { HeaderDesktop } from "@app/components/Header/HeaderDesktop";
 import { HeaderMobile } from "@app/components/Header/HeaderMobile";
+import { useLocation } from "@remix-run/react";
 
 export const Header: React.FC = () => {
   const { isMd } = useMedia();
+  const { pathname } = useLocation();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -14,6 +16,10 @@ export const Header: React.FC = () => {
       setIsMenuOpen(false);
     }
   }, [isMd]);
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
 
   const [isScrolled, setIsScrolled] = useState(false);
 

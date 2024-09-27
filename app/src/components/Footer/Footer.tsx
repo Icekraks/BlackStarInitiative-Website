@@ -17,7 +17,9 @@ const Footer: React.FC<React.PropsWithChildren> = () => {
           <div className="flex flex-col-reverse gap-4 md:gap-0 md:flex-row w-full lg:w-1/3 justify-between lg:justify-start">
             <Disclaimer className="w-full md:w-1/2 lg:w-full" />
             <div className="hidden md:block lg:hidden">
-              <Logo stacked />
+              <RemixLink to="/">
+                <Logo stacked />
+              </RemixLink>
             </div>
           </div>
 
@@ -43,6 +45,7 @@ const Footer: React.FC<React.PropsWithChildren> = () => {
                       variant="link"
                     >
                       <RemixLink
+                        className="whitespace-pre-wrap"
                         to={builtLink.url}
                         target={builtLink.external ? "_blank" : ""}
                         rel="noreferrer"
@@ -55,7 +58,9 @@ const Footer: React.FC<React.PropsWithChildren> = () => {
               </nav>
             )}
             <div className="block md:hidden lg:block lg:ml-auto">
-              <Logo stacked />
+              <RemixLink to="/">
+                <Logo stacked />
+              </RemixLink>
             </div>
           </div>
         </div>
