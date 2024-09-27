@@ -14,6 +14,7 @@
     "schema:typegen": "pnpm sanity-codegen"
   },
   "dependencies": {
+    "@sanity/table": "^1.1.2",
     "@sanity/vision": "^3.25.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

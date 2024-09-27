@@ -6,6 +6,7 @@ export default {
   name: 'content',
   type: 'array',
   of: [
+    {type: 'table'},
     {
       title: 'Content',
       type: 'block',
@@ -14,11 +15,6 @@ export default {
         {title: 'H2', value: 'h2'},
         {title: 'H3', value: 'h3'},
         {title: 'H4', value: 'h4'},
-        {title: 'H1 Sang Bleu', value: 'h1sang'},
-        {title: 'H2 Sang Bleu', value: 'h2sang'},
-        {title: 'H3 Sang Bleu', value: 'h3sang'},
-        {title: 'H4 Sang Bleu', value: 'h4sang'},
-        {title: 'X Large Paragraph', value: 'xLargeParagraph'},
         {title: 'Large Paragraph', value: 'largeParagraph'},
         {title: 'Medium Paragraph', value: 'mediumParagraph'},
         {title: 'Small Paragraph', value: 'smallParagraph'},

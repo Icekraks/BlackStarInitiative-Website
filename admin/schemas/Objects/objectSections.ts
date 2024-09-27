@@ -29,6 +29,10 @@ export default defineType({
       title: 'Call To Action',
       type: 'objectCTA',
     },
+    {
+      title: 'Rich Text',
+      type: 'objectRichtext',
+    },
     // {
     //   title: 'Contact Section',
     //   type: 'objectContact',

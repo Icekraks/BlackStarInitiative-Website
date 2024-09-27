@@ -33,7 +33,7 @@ export const Maintenance: React.FC<MaintainceFormProps> = ({
 
         <div className="flex flex-col max-w-[80%] mx-auto">
           {description && (
-            <p className="text-1.5xl text-bsi-white px-4 md:px-10 lg:px-16 w-full">
+            <p className="text-1.5xl text-bsi-white px-4 md:px-10 lg:px-16 w-full text-center">
               {description}
             </p>
           )}

@@ -22,6 +22,7 @@ import objectTextColumns from './Objects/Sections/objectTextColumns'
 import objectSocialSection from './Objects/Sections/objectSocialSection'
 import objectFeaturedBrands from './Objects/Sections/objectFeaturedBrands'
 import objectCTA from './Objects/Sections/objectCTA'
+import objectRichtext from './Objects/Sections/objectRichText'
 
 // Settings
 import navigation from './Navigation'
@@ -62,6 +63,7 @@ const sections = [
   objectSocialSection,
   objectFeaturedBrands,
   objectCTA,
+  objectRichtext,
 ]
 
 export const schemaTypes = [...pages, ...sections, ...settings, ...objects]
