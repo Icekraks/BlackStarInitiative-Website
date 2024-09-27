@@ -7,6 +7,7 @@ export const ROOT_QUERY = `
       ${HEADER_FRAGMENT}
     },
     "social": *[_type == "settingsSocial"][0] {
+      socialMedia[],
       twitter,
       patreon,
       discord,

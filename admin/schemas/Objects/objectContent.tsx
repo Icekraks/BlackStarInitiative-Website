@@ -16,7 +16,6 @@ export default {
         {title: 'H3', value: 'h3'},
         {title: 'H4', value: 'h4'},
         {title: 'Large Paragraph', value: 'largeParagraph'},
-        {title: 'Medium Paragraph', value: 'mediumParagraph'},
         {title: 'Small Paragraph', value: 'smallParagraph'},
       ],
       marks: {
@@ -41,6 +40,24 @@ export default {
             icon: AiOutlineAlignRight,
             component: (props) => <span style={{textAlign: 'right'}}>{props.children}</span>,
           },
+          {
+            title: 'Red Text',
+            value: 'redText',
+            blockEditor: {
+              icon: () => '🟥',
+              label: 'Red Text',
+              render: (props) => <span style={{color: 'red'}}>{props.children}</span>,
+            },
+          },
+          {
+            title: 'Black Text',
+            value: 'blackText',
+            blockEditor: {
+              icon: () => '⬛',
+              label: 'Black Text',
+              render: (props) => <span style={{color: 'black'}}>{props.children}</span>,
+            },
+          },
         ],
         annotations: [
           {
@@ -53,7 +70,7 @@ export default {
                 description:
                   'Supports external links with http:// or https:// and internal links with /',
                 name: 'link',
-                type: 'flexibleLink',
+                type: 'link',
               },
             ],
           },

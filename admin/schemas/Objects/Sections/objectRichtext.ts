@@ -16,11 +16,6 @@ export default defineType({
       title: 'Content',
       type: 'content',
     }),
-    defineField({
-      name: 'background',
-      title: 'Background',
-      type: 'brandColours',
-    }),
   ],
   preview: {
     select: {
