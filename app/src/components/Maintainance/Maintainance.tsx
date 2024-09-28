@@ -22,16 +22,16 @@ export const Maintenance: React.FC<MaintainceFormProps> = ({
     <div className="relative h-[100dvh] max-h-[1000px] pb-12 lg:pb-16 2xl:pb-20 px-4 md:px-16 pt-12 lg:pt-16 2xl:pt-20">
       <div className="flex flex-col w-full items-center max-w-screen-2xl mx-auto">
         <Logo stacked />
-        <h1 className="heading-2 mt-6 text-4xl lg:text-6xl text-center text-secondary">
+        <h2 className="heading-2 mt-6 text-4xl lg:text-6xl text-center text-secondary">
           {title}
-        </h1>
+        </h2>
         {subtitle && (
           <p className="text-sm text-secondary md:px-10 lg:px-16 mb-8 w-full text-center">
             {subtitle}
           </p>
         )}
 
-        <div className="flex flex-col max-w-[80%] mx-auto">
+        <div className="flex flex-col max-w-[40rem] mx-auto">
           {description && (
             <p className="text-1.5xl text-bsi-white px-4 md:px-10 lg:px-16 w-full text-center">
               {description}
