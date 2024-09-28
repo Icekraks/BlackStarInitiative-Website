@@ -4,6 +4,8 @@ export default defineType({
   name: 'objectSocialSection',
   title: 'Social Media Section',
   type: 'object',
+  description:
+    'A section for social media links. Social Media links are displayed as buttons and is pulled from Settings > Social Media.',
   fields: [
     defineField({
       name: 'title',

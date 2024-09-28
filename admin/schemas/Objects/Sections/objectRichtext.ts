@@ -16,6 +16,13 @@ export default defineType({
       title: 'Content',
       type: 'content',
     }),
+    defineField({
+      name: 'hideTitle',
+      title: 'Hide Title',
+      type: 'boolean',
+      description: 'Hides the title from the section.',
+      initialValue: false,
+    }),
   ],
   preview: {
     select: {

@@ -22,7 +22,12 @@ export default defineType({
       title: 'Content',
       type: 'array',
       of: [
-        {title: 'Image', type: 'image'},
+        {
+          title: 'Image',
+          type: 'image',
+          description:
+            'PNG, JPG, GIF or WEBP. Max Size 1MB, 1920x1080px, Prefer WEBP for better performance.',
+        },
         {title: 'Video', type: 'file'},
       ],
     }),

@@ -55,7 +55,7 @@ const CTA: React.FC<CTAProps> = ({
         </div>
         <div
           className={cn(
-            "w-full lg:w-1/2 max-w-[720px] px-4 pb-12 lg:pb-16",
+            "w-full lg:w-1/2 lg:max-w-[720px] px-4 pb-12 lg:pb-16 mx-auto",
             sectionIndex !== 0 ? "pt-12 lg:pt-16" : ""
           )}
         >
@@ -73,7 +73,7 @@ const CTA: React.FC<CTAProps> = ({
                     ? description
                     : `${description
                         .split(" ")
-                        .slice(0, 20)
+                        .slice(0, 40)
                         .join(" ")}...`}{" "}
                 </span>
 

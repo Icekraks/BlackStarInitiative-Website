@@ -12,6 +12,7 @@ const Richtext: React.FC<RichTextProps> = ({
   title,
   content,
   sectionIndex,
+  hideTitle = false,
 }) => {
   const { formatContent } = useContent();
   const formattedContent = formatContent(content);
@@ -24,7 +25,7 @@ const Richtext: React.FC<RichTextProps> = ({
       )}
     >
       <div className="flex flex-col w-full items-center max-w-screen-2xl mx-auto">
-        {title && (
+        {title && !hideTitle && (
           <SectionHeading
             sectionIndex={sectionIndex}
             title={title}

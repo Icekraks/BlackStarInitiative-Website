@@ -18,9 +18,10 @@ type HeaderFooterProps = {
 export const HeaderFooter: React.FC<HeaderFooterProps> = ({ social }) => {
   return (
     <>
-      {social.socialMedia?.map((socialMedia) => {
+      {social.socialMedia?.map((socialMedia, index) => {
         return (
           <Button
+            key={index}
             className="fill-bsi-red hover:fill-primary"
             variant="ghost"
             size="icon"

@@ -1,3 +1,4 @@
+import { cn } from "@app/utils/utils";
 import { PortableText } from "@portabletext/react";
 import { Link } from "@remix-run/react";
 
@@ -7,7 +8,42 @@ export const useContent = () => {
       table: ({ value }: any) => {
         const { rows } = value;
 
-        return null;
+        return (
+          <div className="my-6">
+            <table className="overflow-scroll table-auto w-full">
+              <tbody>
+                {rows.map((row: { cells: string[]; _key: string }) => (
+                  <tr
+                    key={row._key}
+                    className="border-x-[1px] border-bsi-white"
+                  >
+                    {row.cells.map((cell: string) => {
+                      return (
+                        <td
+                          key={cell}
+                          className="font-body text-sm lg:text-base text-bsi-white px-2 py-4 normal-nums border-[1px] border-bsi-white"
+                        >
+                          {cell.includes("https://") ||
+                          cell.includes("http://") ? (
+                            <Link
+                              className="underline text-bsi-white"
+                              to={cell}
+                              target="_blank"
+                            >
+                              {cell}
+                            </Link>
+                          ) : (
+                            cell
+                          )}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        );
       },
     },
     marks: {
@@ -91,18 +127,36 @@ export const useContent = () => {
     },
     list: {
       bullet: ({ children }: { children: any }) => {
-        return null;
+        return (
+          <ul className="list-disc list-inside text-bsi-white">{children}</ul>
+        );
       },
       number: ({ children }: { children: any }) => {
-        return null;
+        return (
+          <ol className="list-decimal list-inside text-bsi-white">
+            {children}
+          </ol>
+        );
       },
     },
     listItem: {
       bullet: ({ children, value }: { children: any; value: any }) => {
-        return null;
+        return <li className="font-normal text-bsi-white">{children}</li>;
       },
       number: ({ children, value }: { children: any; value: any }) => {
-        return null;
+        const isBold = value?.children?.[0]?.marks?.some(
+          (mark: string) => mark === "strong"
+        );
+        return (
+          <li
+            className={cn(
+              "text-bsi-white",
+              isBold ? "font-bold" : "font-normal"
+            )}
+          >
+            {children}
+          </li>
+        );
       },
     },
   };
