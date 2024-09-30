@@ -14,6 +14,8 @@ import objectInternal from './Objects/InternalObject'
 import objectTextColumn from './Objects/objectTextColumn'
 import objectContent from './Objects/objectContent'
 import contactCard from './Objects/objectContactCard'
+import featuredBrandObject from './Objects/featuredBrandObject'
+import socialMediaObject from './Objects/socialMediaObject'
 
 // Sections
 import objectHero from './Objects/Sections/objectHero'
@@ -54,6 +56,8 @@ const objects = [
   BrandColours,
   objectContent,
   contactCard,
+  featuredBrandObject,
+  socialMediaObject,
 ]
 
 const sections = [

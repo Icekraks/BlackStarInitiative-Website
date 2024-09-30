@@ -15,28 +15,11 @@ export default defineType({
     }),
     defineField({
       name: 'featuredBrand',
-      title: 'Featured Brand',
+      title: 'Featured Brands',
       type: 'array',
       of: [
         {
-          type: 'object',
-          fields: [
-            defineField({
-              name: 'title',
-              title: 'Title',
-              type: 'string',
-              validation: (Rule) => Rule.required(),
-              codegen: {required: true},
-            }),
-            defineField({
-              name: 'image',
-              title: 'Image',
-              type: 'text',
-              description: 'Image should be an SVG',
-              validation: (Rule) => Rule.required(),
-              codegen: {required: true},
-            }),
-          ],
+          type: 'featuredBrandObject',
         },
       ],
       validation: (Rule) => Rule.max(4),
