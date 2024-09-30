@@ -1,6 +1,5 @@
 import React from "react";
 import { ContactCard as ContactCardType } from "@app/types/schema";
-import useLink from "@app/hooks/useLink";
 import { Link } from "@remix-run/react";
 import { Button } from "@app/theme/ui/button";
 import { cn } from "@app/utils/utils";
@@ -14,11 +13,7 @@ export const ContactCard: React.FC<ContactCardProps> = ({
   description,
   backgroundColour = "black",
   link,
-  // link,
 }) => {
-  const { urlResolver } = useLink();
-  const resolvedLink = link ? urlResolver(link) : null;
-
   return (
     <div
       className={cn(
@@ -53,7 +48,7 @@ export const ContactCard: React.FC<ContactCardProps> = ({
       >
         {description}
       </p>
-      {resolvedLink && (
+      {link && link.link && link.title && (
         <Button
           asChild
           variant={
@@ -65,7 +60,7 @@ export const ContactCard: React.FC<ContactCardProps> = ({
           }
           className="underline pl-0"
         >
-          <Link to={resolvedLink.url}>{resolvedLink.label}</Link>
+          <Link to={link.link}>{link.title}</Link>
         </Button>
       )}
     </div>

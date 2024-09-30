@@ -15,10 +15,11 @@ export default defineType({
       name: 'description',
       type: 'text',
     }),
+
     defineField({
       title: 'Link',
       name: 'link',
-      type: 'flexibleLink',
+      type: 'link',
     }),
   ],
   preview: {
