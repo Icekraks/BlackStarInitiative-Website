@@ -45,7 +45,17 @@ const TextColumns: React.FC<TextColumnProps> = ({
                     </span>
                   ))}
                 </h3>
-                <p className="text-bsi-white text-base lg:text-lg">
+                <p
+                  className={cn(
+                    "text-base lg:text-lg",
+                    background?.colour === "black" ||
+                      background?.colour === "pure-black" ||
+                      background?.colour === "red" ||
+                      background?.colour === "grey"
+                      ? "text-bsi-white"
+                      : "text-bsi-black"
+                  )}
+                >
                   {column.description}
                 </p>
               </div>

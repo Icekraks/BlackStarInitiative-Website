@@ -33,9 +33,9 @@ export default defineType({
       title: 'Rich Text',
       type: 'objectRichtext',
     },
-    // {
-    //   title: 'Contact Section',
-    //   type: 'objectContact',
-    // },
+    {
+      title: 'Contact Section',
+      type: 'objectContact',
+    },
   ],
 })

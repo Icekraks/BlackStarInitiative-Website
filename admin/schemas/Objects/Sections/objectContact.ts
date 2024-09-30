@@ -16,14 +16,27 @@ export default defineType({
       type: 'text',
     }),
     defineField({
-      name: 'image',
-      title: 'Image',
-      type: 'image',
+      name: 'contactCard',
+      title: 'Contact Card',
+      type: 'array',
+      of: [{type: 'contactCard'}],
+    }),
+    defineField({
+      name: 'background',
+      title: 'Background',
+      type: 'brandColours',
     }),
   ],
   preview: {
     select: {
       title: 'title',
+    },
+    prepare(selection) {
+      const {title} = selection
+
+      return {
+        title: title || 'Contact Section',
+      }
     },
   },
 })

@@ -9,11 +9,11 @@ import objectSections from './Objects/objectSections'
 
 // Objects
 import featuredObject from './Objects/Sections/objectFeaturedObject'
-import objectContact from './Objects/Sections/objectContact'
 import carouselObject from './Objects/Sections/objectCarouselObject'
 import objectInternal from './Objects/InternalObject'
 import objectTextColumn from './Objects/objectTextColumn'
 import objectContent from './Objects/objectContent'
+import contactCard from './Objects/objectContactCard'
 
 // Sections
 import objectHero from './Objects/Sections/objectHero'
@@ -23,6 +23,7 @@ import objectSocialSection from './Objects/Sections/objectSocialSection'
 import objectFeaturedBrands from './Objects/Sections/objectFeaturedBrands'
 import objectCTA from './Objects/Sections/objectCTA'
 import objectRichtext from './Objects/Sections/objectRichText'
+import objectContact from './Objects/Sections/objectContact'
 
 // Settings
 import navigation from './Navigation'
@@ -47,12 +48,12 @@ const objects = [
   featuredObject,
   objectSections,
   linkObject,
-  objectContact,
   carouselObject,
   objectInternal,
   FlexibleLink,
   BrandColours,
   objectContent,
+  contactCard,
 ]
 
 const sections = [
@@ -64,6 +65,7 @@ const sections = [
   objectFeaturedBrands,
   objectCTA,
   objectRichtext,
+  objectContact,
 ]
 
 export const schemaTypes = [...pages, ...sections, ...settings, ...objects]

@@ -67,7 +67,17 @@ const CTA: React.FC<CTAProps> = ({
           />
           <div className="flex flex-col mb-4 lg:mb-12">
             {description && (
-              <p className="text-bsi-white px-4 md:px-10 lg:px-16 w-full">
+              <p
+                className={cn(
+                  "px-4 md:px-10 lg:px-16 w-full",
+                  background?.colour === "black" ||
+                    background?.colour === "pure-black" ||
+                    background?.colour === "red" ||
+                    background?.colour === "grey"
+                    ? "text-bsi-white"
+                    : "text-bsi-black"
+                )}
+              >
                 <span className="block md:hidden">
                   {readMore
                     ? description
