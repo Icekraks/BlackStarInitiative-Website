@@ -1,5 +1,5 @@
 import { Button } from "@app/theme/ui/button";
-import type { LinkObject, RootLoaderData } from "@app/types/global";
+import { RootLoaderData } from "@app/types/global";
 import { Link as RemixLink, useRouteLoaderData } from "@remix-run/react";
 import { HeaderFooter } from "@app/components/Header/HeaderFooter";
 import { LogoMobile } from "@app/components/LogoMobile";
@@ -7,6 +7,7 @@ import { Logo } from "@app/components/Logo";
 import { cn } from "@app/utils/utils";
 import { Menu, X } from "lucide-react";
 import useLink from "@app/hooks/useLink";
+import { FlexibleLink } from "@app/types/schema";
 
 export type HeaderMobileProps = {
   isOpen: boolean;
@@ -80,7 +81,7 @@ export const HeaderMobile: React.FC<HeaderMobileProps> = ({
               </RemixLink>
             </Button>
             {root.navigation.header.links.map(
-              (link: LinkObject, index: number) => {
+              (link: FlexibleLink, index: number) => {
                 const resolvedUrl = urlResolver(link);
                 return (
                   <Button

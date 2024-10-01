@@ -1,5 +1,5 @@
 import {
-  Internal,
+  FlexibleLink,
   ObjectSections,
   SanityImageAsset,
   SanityImageCrop,
@@ -30,13 +30,7 @@ export type NotFound = {
 
 export type Navigation = {
   title: string;
-  links: LinkObject[];
-};
-
-export type LinkObject = {
-  type: boolean;
-  internal?: Internal;
-  external?: Link;
+  links: FlexibleLink[];
 };
 
 export type Link = {

@@ -1,7 +1,7 @@
-import { LinkObject } from "@app/types/global";
+import { FlexibleLink } from "@app/types/schema";
 
 const useLink = () => {
-  const urlResolver = (link: LinkObject) => {
+  const urlResolver = (link: FlexibleLink) => {
     if (link.type) {
       return {
         label: link.external?.title || "",
