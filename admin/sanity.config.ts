@@ -7,7 +7,7 @@ import {structure} from './structure'
 
 export default defineConfig({
   name: 'default',
-  title: 'admin',
+  title: 'Black Star Initiative Admin',
 
   projectId: 'f3je6yf6',
   dataset: 'production',
