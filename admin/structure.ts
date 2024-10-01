@@ -1,6 +1,6 @@
 export const structure = (S) => {
   return S.list()
-    .title('content')
+    .title('Black Star Intiative')
     .items([
       S.listItem()
         .title('Home Page')
