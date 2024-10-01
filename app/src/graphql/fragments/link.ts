@@ -1,5 +1,5 @@
 export const LINK_FRAGMENT = `
 title,
-url,
+link,
 external
 `;
