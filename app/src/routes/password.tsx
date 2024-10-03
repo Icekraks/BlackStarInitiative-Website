@@ -43,7 +43,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
   const session = await getSession(request.headers.get("Cookie"));
   const cookieMaintainance = await session.get("maintainanceMode");
 
-  if (cookieMaintainance === "true") {
+  if (cookieMaintainance === "true" || page?.passwordEnabled === false) {
     return redirect("/");
   }
 
