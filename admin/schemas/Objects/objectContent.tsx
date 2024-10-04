@@ -7,6 +7,7 @@ export default {
   type: 'array',
   of: [
     {type: 'table'},
+    {type: 'imageObject'},
     {
       title: 'Content',
       type: 'block',

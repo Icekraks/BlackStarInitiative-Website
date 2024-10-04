@@ -1,3 +1,4 @@
+import { ResponsiveImage } from "@app/components/ResponsiveImage";
 import { cn } from "@app/utils/utils";
 import { PortableText } from "@portabletext/react";
 import { Link } from "@remix-run/react";
@@ -43,6 +44,11 @@ export const useContent = () => {
               </tbody>
             </table>
           </div>
+        );
+      },
+      imageObject: ({ value }: { value: any }) => {
+        return (
+          <ResponsiveImage src={value?.image?.asset?.url} alt={value.alt} />
         );
       },
     },

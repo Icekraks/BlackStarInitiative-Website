@@ -16,6 +16,7 @@ import objectContent from './Objects/objectContent'
 import contactCard from './Objects/objectContactCard'
 import featuredBrandObject from './Objects/featuredBrandObject'
 import socialMediaObject from './Objects/socialMediaObject'
+import imageObject from './Objects/imageObject'
 
 // Sections
 import objectHero from './Objects/Sections/objectHero'
@@ -58,6 +59,7 @@ const objects = [
   contactCard,
   featuredBrandObject,
   socialMediaObject,
+  imageObject,
 ]
 
 const sections = [
