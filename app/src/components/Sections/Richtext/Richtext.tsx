@@ -33,7 +33,9 @@ const Richtext: React.FC<RichTextProps> = ({
             className="md:px-10 lg:px-16"
           />
         )}
-        <div className="flex flex-col max-w-[800px]">{formattedContent}</div>
+        <div className="flex flex-col max-w-[800px] w-full whitespace-pre-wrap">
+          {formattedContent}
+        </div>
       </div>
     </div>
   );
